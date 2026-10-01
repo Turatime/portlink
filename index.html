@@ -249,6 +249,161 @@
       box-shadow: 0 0 18px -2px rgba(255, 36, 66, 0.35);
     }
 
+    /* White Feed Bottom Sheet ("ช่องขาว" RedNote style) */
+    .feed-sheet {
+      position: relative;
+      z-index: 20;
+      background-color: #ffffff;
+      color: #111111;
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+      box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.35);
+      flex: 1;
+      margin-top: 26px;
+      overflow: hidden;
+    }
+    .feed-header {
+      padding: 15px 16px 12px 16px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #f0f0f2;
+    }
+    .feed-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      padding: 10px 10px 24px 10px;
+      background-color: #f7f7f8;
+    }
+    .feed-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .feed-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+    }
+    .card-thumb-wrap {
+      position: relative;
+      width: 100%;
+      background-color: #e5e5e5;
+      overflow: hidden;
+    }
+    .card-thumb {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      transition: transform 0.25s ease;
+    }
+    .feed-card:hover .card-thumb {
+      transform: scale(1.02);
+    }
+    .badge-pinned {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background-color: var(--rednote-red);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 6px rgba(255, 36, 66, 0.4);
+      z-index: 5;
+      letter-spacing: 0.02em;
+    }
+    .badge-video {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      z-index: 5;
+    }
+    .card-body {
+      padding: 9px 8px 10px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .card-title {
+      font-size: 0.825rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #222222;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+    .card-author {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
+    }
+    .card-author-avatar {
+      width: 17px;
+      height: 17px;
+      border-radius: 9999px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .card-author-name {
+      font-size: 0.68rem;
+      color: #666666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .like-btn {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.7rem;
+      color: #777777;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.1s ease;
+    }
+    .like-btn:active {
+      transform: scale(1.2);
+    }
+    .like-btn.liked {
+      color: var(--rednote-red);
+    }
+    .like-btn.liked svg {
+      fill: var(--rednote-red);
+      stroke: var(--rednote-red);
+    }
+
     /* Modal / Popup for Contact and Video */
     .rednote-modal {
       display: none;
@@ -444,11 +599,191 @@
         <div class="mt-3.5 flex flex-col gap-2" id="playlist-container">
           <!-- Rendered by JavaScript -->
         </div>
+      </div>
+    </section>
 
-        <!-- Action / Booking Banner Card -->
-        <div class="mt-5 rounded-2xl border border-white/10 bg-[#292522] p-4 text-center shadow-lg">
-          <p class="text-xs font-semibold text-white/80">สนใจเรียนเดี่ยว 1:1, คอร์สกลุ่ม หรือติดต่องานบรรยาย</p>
-          <p class="mt-0.5 text-[11px] text-white/50">สอบถามรายละเอียดและตรวจการบ้านได้ทาง Line Official</p>
+    <!-- 4. White Feed Bottom Sheet ("ช่องขาว" RedNote style) -->
+    <section class="feed-sheet">
+      <!-- Feed Header (Notes / Saves tabs removed as requested, clean label + search) -->
+      <div class="feed-header">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="inline-block size-2 rounded-full bg-[#ff2442]"></span>
+            <span class="text-xs font-black tracking-wider text-gray-900 uppercase">
+              FEED & POSTS · คอนเทนต์และบทเรียน
+            </span>
+          </div>
+          <button type="button" class="p-1 text-gray-400 hover:text-black transition" onclick="focusSearch()" aria-label="ค้นหาโพสต์" title="ค้นหา">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </div>
+
+        <!-- Search Input Box (Hidden by default, togglable) -->
+        <div id="search-box" class="hidden pt-2.5">
+          <input
+            id="feed-search"
+            type="text"
+            placeholder="ค้นหาคอนเทนต์ในโพสต์..."
+            oninput="filterPosts(this.value)"
+            class="w-full rounded-full border border-gray-200 bg-gray-100 px-4 py-1.5 text-xs text-black outline-none focus:border-red-500"
+          />
+        </div>
+      </div>
+
+      <!-- 2-Column RedNote Post Cards Grid (6 cards with pinned badges, video time, author, likes) -->
+      <div id="notes-grid" class="feed-grid">
+        <!-- Card 1: Pinned / ปักหมุด (เริ่มเล่าเรื่องยังไง) -->
+        <div class="feed-card" onclick="openPostModal('零基础 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง คอร์สระบบพื้นฐาน', './images/video-cover.jpg', '06:42', 'คอร์สเรียนปูพื้นฐานการเล่าเรื่องตั้งแต่ศูนย์ สำหรับคนที่พูดไม่เก่ง ไม่รู้จะเริ่มตรงไหน พร้อมเทคนิคการจัดระเบียบความคิดให้เข้าใจง่าย')">
+          <div class="card-thumb-wrap">
+            <span class="badge-pinned">Pinned</span>
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              06:42
+            </span>
+            <img src="./images/video-cover.jpg" alt="เริ่มเล่าเรื่องยังไง" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">零基础 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง คอร์สระบบพื้นฐาน</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 12400)" title="ถูกใจ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>12.4K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pinned / ปักหมุด (2026 เวิร์กช็อป) -->
+        <div class="feed-card" onclick="openPostModal('2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปเข้มข้น LEO班', './images/banner_aivcs.jpg', '04:18', 'เวิร์กช็อปเข้มข้น 8 สัปดาห์ ค้นหาแก่นแท้และสไตล์ของตัวเอง ไม่ต้องตามใคร พร้อมแบบฝึกหัดและการตรวจการบ้านรายคน')">
+          <div class="card-thumb-wrap">
+            <span class="badge-pinned">Pinned</span>
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              04:18
+            </span>
+            <img src="./images/banner_aivcs.jpg" alt="2026 หาเสียงของตัวเองให้เจอ" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปเข้มข้น LEO班</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 8900)" title="ถูกใจ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>8.9K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: เบื้องหลังคอนเทนต์หนึ่งชิ้น -->
+        <div class="feed-card" onclick="openPostModal('เบื้องหลังคอนเทนต์ 1 ชิ้น คิดยังไงให้ภาพและเรื่องเล่าเดินไปด้วยกัน', './images/grid_1.jpg', '08:05', 'เจาะลึกกระบวนการคิด เบื้องหลังการเตรียมพร็อพ การเซ็ตฉาก และการใช้ Storyboard ให้ทำงานได้ไวขึ้น')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              08:05
+            </span>
+            <img src="./images/grid_1.jpg" alt="เบื้องหลังคอนเทนต์" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">เบื้องหลังคอนเทนต์ 1 ชิ้น คิดยังไงให้ภาพและเรื่องเล่าเดินไปด้วยกัน</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 5210)" title="ถูกใจ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>5.2K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: เปลี่ยนไอเดียธรรมดา -->
+        <div class="feed-card" onclick="openPostModal('เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนอยากแชร์', './images/grid_2.jpg', '05:26', 'เทคนิค Hook ใน 3 วินาทีแรก และการสร้างจังหวะจะโคนในการเล่าเรื่องให้ผู้ฟังรู้สึกมีส่วนร่วมตลอดเวลา')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              05:26
+            </span>
+            <img src="./images/grid_2.jpg" alt="เปลี่ยนไอเดียธรรมดา" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนฟังแล้วจำได้ทันที</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 6140)" title="ถูกใจ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>6.1K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: วิธีพูดหน้ากล้อง -->
+        <div class="feed-card" onclick="openPostModal('วิธีพูดหน้ากล้องให้เป็นธรรมชาติ ไม่เกร็ง ไม่ท่องจำ', './images/creator-portrait.jpg', '09:10', 'แบบฝึกหัดคลายความกลัวหน้ากล้อง การมองเลนส์ให้เหมือนมองเพื่อนสนิท และการพูดแบบมีอารมณ์ร่วม')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              09:10
+            </span>
+            <img src="./images/creator-portrait.jpg" alt="วิธีพูดหน้ากล้อง" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">วิธีพูดหน้ากล้องให้เป็นธรรมชาติ ไม่เกร็ง ไม่ท่องจำ</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 15800)" title="ถูกใจ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>15.8K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: สรุป 5 กฎเหล็ก -->
+        <div class="feed-card" onclick="openPostModal('สรุป 5 กฎเหล็กในการเล่าเรื่องสำหรับมือใหม่', './images/grid_3.jpg', '07:15', '5 สิ่งที่ควรทำและ 3 สิ่งที่ห้ามทำเมื่อเริ่มเล่าเรื่องหน้ากล้อง พร้อมสูตรสคริปต์ 1 นาทีที่ใครก็พูดตามได้')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              07:15
+            </span>
+            <img src="./images/grid_3.jpg" alt="สรุป 5 กฎเหล็ก" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">สรุป 5 กฎเหล็กในการเล่าเรื่องหน้ากล้องสำหรับมือใหม่</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 9320)" title="ถูกใจ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>9.3K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action / Booking Banner Card inside white sheet -->
+      <div class="px-3.5 pt-2 pb-6">
+        <div class="rounded-2xl border border-gray-200 bg-[#f9f9fb] p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-gray-800">สนใจเรียนเดี่ยว 1:1, คอร์สกลุ่ม หรือติดต่องานบรรยาย</p>
+          <p class="mt-0.5 text-[11px] text-gray-500">สอบถามรายละเอียดและตรวจการบ้านได้ทาง Line Official</p>
           <a href="#contact-modal" class="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#ff2442] py-2.5 text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span>ทักแชท / สอบถามรายละเอียด</span>
@@ -456,13 +791,44 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mt-8 pb-10 text-center text-[11px] text-white/40">
+        <footer class="mt-6 text-center text-[11px] text-gray-400">
           <p>© 2026 PANG STUDIO · ALL RIGHTS RESERVED</p>
-          <p class="mt-1 text-[10px] text-white/25">คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</p>
+          <p class="mt-1 text-[10px] text-gray-400">คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</p>
         </footer>
       </div>
     </section>
 
+  </div>
+
+  <!-- Interactive Post Detail Modal -->
+  <div id="post-modal" class="rednote-modal" onclick="closePostModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="relative">
+        <img id="modal-img" src="./images/video-cover.jpg" alt="Cover" class="aspect-video w-full object-cover" />
+        <button type="button" onclick="closePostModal()" class="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/90">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <span id="modal-badge" class="absolute bottom-3 right-3 rounded-full bg-black/70 px-2.5 py-1 text-xs font-bold text-white">06:42</span>
+      </div>
+      <div class="p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="./images/creator-portrait.jpg" alt="Author" class="size-6 rounded-full object-cover" />
+          <span class="text-xs font-bold text-white">ปัง PANG!(Storyteller)</span>
+          <span class="text-xs text-white/40">· เจ้าของโพสต์</span>
+        </div>
+        <h2 id="modal-title" class="text-base font-extrabold text-white leading-snug">ชื่อโพสต์</h2>
+        <p id="modal-desc" class="mt-2 text-xs leading-relaxed text-white/70">รายละเอียดคอนเทนต์</p>
+
+        <div class="mt-6 flex items-center gap-3">
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex-1 rounded-full bg-[#ff2442] py-2.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
+            ▶ ดูคลิปเต็มบน YouTube
+          </a>
+          <a href="#contact-modal" class="flex-1 rounded-full border border-white/20 bg-white/10 py-2.5 text-center text-xs font-bold text-white hover:bg-white/20 transition">
+            💬 ทักคุยเรื่องคอร์ส
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Contact & Social Channels Modal -->
@@ -567,6 +933,64 @@
 
       // Re-render playlist buttons
       renderPlaylist();
+    }
+
+    // Like Counter Toggle
+    function toggleLike(btn, baseCount) {
+      const isLiked = btn.classList.contains('liked');
+      const span = btn.querySelector('span');
+
+      if (isLiked) {
+        btn.classList.remove('liked');
+        span.textContent = formatCount(baseCount);
+      } else {
+        btn.classList.add('liked');
+        span.textContent = formatCount(baseCount + 1);
+      }
+    }
+
+    function formatCount(num) {
+      if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+      }
+      return num;
+    }
+
+    // Post Detail Modal
+    function openPostModal(title, img, badge, desc) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-img').src = img;
+      document.getElementById('modal-badge').textContent = badge;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('post-modal').classList.add('open');
+    }
+
+    function closePostModal(e) {
+      if (e) e.stopPropagation();
+      document.getElementById('post-modal').classList.remove('open');
+    }
+
+    // Feed Search & Filter
+    function focusSearch() {
+      const searchBox = document.getElementById('search-box');
+      if (!searchBox) return;
+      searchBox.classList.toggle('hidden');
+      if (!searchBox.classList.contains('hidden')) {
+        document.getElementById('feed-search').focus();
+      }
+    }
+
+    function filterPosts(keyword) {
+      const cards = document.querySelectorAll('#notes-grid .feed-card');
+      const lower = keyword.toLowerCase().trim();
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        if (!lower || title.includes(lower)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
 
     // Init on load
