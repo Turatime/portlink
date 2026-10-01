@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PANG — Creator & Storyteller</title>
+  <meta name="description" content="เรียนรู้การเล่าเรื่องและสร้างคอนเทนต์ให้เป็นตัวเองไปกับ PANG" />
+  <meta property="og:title" content="PANG — Creator & Storyteller" />
+  <meta property="og:description" content="เรียนรู้การเล่าเรื่องและสร้างคอนเทนต์ให้เป็นตัวเองไปกับ PANG" />
+  <meta property="og:type" content="website" />
+  <link rel="preload" as="image" href="./images/creator-portrait.jpg" />
+
+  <!-- Google Fonts: Noto Sans Thai, Plus Jakarta Sans, Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/styles-design77.css" />
+
+  <style>
+    :root {
+      --font-display: 'Syne', 'Noto Sans Thai', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+    }
+    .font-display {
+      font-family: var(--font-display) !important;
+    }
+    /* Smooth CSS modal targeting */
+    .contact-modal {
+      display: none;
+    }
+    .contact-modal:target {
+      display: grid;
+    }
+  </style>
+</head>
+<body class="bg-background text-foreground selection:bg-lemon selection:text-foreground">
+  <main class="min-h-screen overflow-hidden bg-background text-foreground">
+    <!-- 1. Header -->
+    <header class="mx-auto flex w-full max-w-4xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="#top" class="font-display text-xl font-extrabold uppercase tracking-tight">
+        PANG<span class="text-coral">!</span>
+      </a>
+      <a href="#contact-panel" class="inline-flex items-center justify-center rounded-full border border-foreground bg-background text-foreground shadow-none hover:bg-accent px-4 py-2 text-xs font-semibold transition-all cursor-pointer">
+        <span>ติดต่อ</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 ml-1.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+    </header>
+
+    <div class="mx-auto w-full max-w-4xl px-5 pb-20 sm:px-8 sm:pb-28">
+      <!-- 2. Hero Section -->
+      <section id="top" class="pt-8 sm:pt-14">
+        <div class="grid items-center gap-6 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-10">
+          <!-- Profile Avatar with offset cobalt circle and lemon brush badge -->
+          <div class="relative mx-auto sm:mx-0">
+            <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-full bg-cobalt" aria-hidden="true"></div>
+            <img src="./images/creator-portrait.jpg" width="1024" height="1280" alt="PANG ครีเอเตอร์และนักเล่าเรื่อง" class="relative aspect-square w-40 rounded-full border-2 border-foreground object-cover sm:w-44 shadow-sm" />
+            <span class="absolute -bottom-2 -right-3 grid size-12 place-items-center rounded-full border-2 border-foreground bg-lemon text-foreground shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/></svg>
+            </span>
+          </div>
+
+          <!-- Hero Text -->
+          <div class="text-center sm:text-left">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-coral">Creator · Storyteller · Mentor</p>
+            <h1 class="font-display text-6xl font-extrabold leading-none uppercase sm:text-8xl tracking-tight">
+              PANG<span class="text-coral">!</span>
+            </h1>
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
+              เป็นตัวเองให้ชัด แล้วเล่าออกมาให้โลกจำ พื้นที่สำหรับคนที่อยากทำคอนเทนต์อย่างมีตัวตน
+            </p>
+          </div>
+        </div>
+
+        <!-- Banner: เปิดรับสอนทั้งเด็กและผู้ใหญ่ -->
+        <div class="my-10 border-y border-foreground py-5 text-center sm:my-14 sm:py-6">
+          <p class="font-display text-2xl font-bold leading-snug sm:text-4xl">
+            เปิดรับสอนทั้งเด็กและผู้ใหญ่<br />
+            <span class="text-cobalt">สอนได้ทั้งกระดาษและดิจิทัล</span>
+          </p>
+        </div>
+
+        <!-- Scroll CTA -->
+        <a href="#work" class="mx-auto flex w-fit items-center gap-3 text-sm font-semibold transition-transform hover:translate-y-0.5">
+          <span>ดูผลงานและบริการ</span>
+          <span class="grid size-9 place-items-center rounded-full border border-foreground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+          </span>
+        </a>
+      </section>
+
+      <!-- 3. Featured Video Section -->
+      <section id="work" class="pt-20 sm:pt-28">
+        <div class="mb-7 flex items-end justify-between gap-4">
+          <div>
+            <p class="mb-2 text-xs font-bold uppercase tracking-wider text-coral">Featured video · 001</p>
+            <h2 class="font-display text-4xl font-extrabold sm:text-6xl tracking-tight">คลิปนี้อยากให้ดู</h2>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden size-9 sm:block text-foreground"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+        </div>
+
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="group relative block overflow-hidden border-2 border-foreground shadow-[8px_8px_0_var(--cobalt)] transition-all" aria-label="ดูวิดีโอแนะนำบน YouTube">
+          <img src="./images/video-cover.jpg" loading="lazy" width="1536" height="864" alt="เก้าอี้สีแดงและโทรโข่งสีน้ำเงินในสตูดิโอ" class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+          <span class="absolute inset-0 grid place-items-center bg-foreground/10">
+            <span class="grid size-16 place-items-center rounded-full border-2 border-foreground bg-lemon text-foreground transition-transform group-hover:scale-110 sm:size-20 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-7 fill-current ml-1"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            </span>
+          </span>
+          <span class="absolute bottom-3 left-3 bg-foreground px-3 py-2 text-xs font-semibold text-primary-foreground">
+            เล่นวิดีโอ · 06:42
+          </span>
+        </a>
+      </section>
+
+      <!-- 4. Services Grid (2x2 Grid) -->
+      <section class="pt-20 sm:pt-28">
+        <p class="mb-2 text-xs font-bold uppercase tracking-wider text-coral">Learn · Create · Grow</p>
+        <h2 class="mb-8 font-display text-4xl font-extrabold sm:text-6xl tracking-tight">มาเรียนด้วยกัน</h2>
+        <div class="grid border-l-2 border-t-2 border-foreground grid-cols-2">
+          <!-- /01 -->
+          <a href="#contact-panel" class="group min-h-44 border-b-2 border-r-2 border-foreground p-4 transition-transform hover:-translate-y-1 sm:min-h-56 sm:p-7 bg-coral text-foreground">
+            <div class="flex h-full flex-col justify-between gap-8">
+              <div class="flex items-start justify-between">
+                <span class="font-display text-xs font-bold">/01</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold leading-tight sm:text-3xl">สอนออนไลน์</h3>
+                <p class="mt-2 text-xs font-medium opacity-75 sm:text-sm">ตัวต่อตัว</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- /02 -->
+          <a href="#contact-panel" class="group min-h-44 border-b-2 border-r-2 border-foreground p-4 transition-transform hover:-translate-y-1 sm:min-h-56 sm:p-7 bg-lemon text-foreground">
+            <div class="flex h-full flex-col justify-between gap-8">
+              <div class="flex items-start justify-between">
+                <span class="font-display text-xs font-bold">/02</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold leading-tight sm:text-3xl">สอนออนไลน์</h3>
+                <p class="mt-2 text-xs font-medium opacity-75 sm:text-sm">แบบกลุ่ม</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- /03 -->
+          <a href="#contact-panel" class="group min-h-44 border-b-2 border-r-2 border-foreground p-4 transition-transform hover:-translate-y-1 sm:min-h-56 sm:p-7 bg-cobalt text-primary-foreground">
+            <div class="flex h-full flex-col justify-between gap-8">
+              <div class="flex items-start justify-between">
+                <span class="font-display text-xs font-bold">/03</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold leading-tight sm:text-3xl">เวิร์กช็อป</h3>
+                <p class="mt-2 text-xs font-medium opacity-75 sm:text-sm">นอกสถานที่</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- /04 -->
+          <a href="#contact-panel" class="group min-h-44 border-b-2 border-r-2 border-foreground p-4 transition-transform hover:-translate-y-1 sm:min-h-56 sm:p-7 bg-card text-foreground">
+            <div class="flex h-full flex-col justify-between gap-8">
+              <div class="flex items-start justify-between">
+                <span class="font-display text-xs font-bold">/04</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="m12.296 3.464 3.02 3.95"/><path d="m19.296 3.464 3.02 3.95"/><path d="M2.5 8h19"/><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m5.296 3.464 3.02 3.95"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold leading-tight sm:text-3xl">รับสร้างคอนเทนต์</h3>
+                <p class="mt-2 text-xs font-medium opacity-75 sm:text-sm">วิดีโอ · ภาพ · เรื่องเล่า</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- 5. Contact Section (รู้จักกันไว้ก่อน) -->
+    <section id="contact" class="border-y-2 border-foreground bg-cobalt py-16 text-primary-foreground sm:py-20">
+      <div class="mx-auto w-full max-w-4xl px-5 text-center sm:px-8">
+        <p class="mb-3 text-xs font-bold uppercase tracking-wider text-lemon">Follow · Talk · Create</p>
+        <h2 class="font-display text-5xl font-extrabold leading-none sm:text-7xl tracking-tight">รู้จักกันไว้ก่อน</h2>
+        <p class="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/80 sm:text-base">
+          ติดตามผลงานใหม่ แชร์ไอเดีย หรือทักมาคุยเรื่องงานได้ทุกช่องทาง
+        </p>
+
+        <!-- Social Grid -->
+        <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            <span>YouTube</span>
+          </a>
+
+          <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <span class="font-display text-lg font-bold">Tk</span>
+            <span>TikTok</span>
+          </a>
+
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <span class="font-display text-lg font-bold">f</span>
+            <span>Facebook</span>
+          </a>
+        </div>
+
+        <!-- Big CTA Button -->
+        <a href="#contact-panel" class="inline-flex items-center justify-center rounded-full border border-foreground bg-foreground text-primary-foreground shadow-[4px_4px_0_var(--coral)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--coral)] font-semibold transition-all cursor-pointer mt-8 h-14 px-7 text-base gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/></svg>
+          <span>ติดต่อเรื่องงาน</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="flex flex-col gap-3 bg-foreground px-5 py-7 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <span>© 2026 PANG STUDIO</span>
+      <span>คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</span>
+    </footer>
+
+    <!-- 7. Contact Modal Panel (Pure CSS :target) -->
+    <section id="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title" class="contact-modal fixed inset-0 z-50 place-items-center px-4 py-8">
+      <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute inset-0 bg-foreground/80 backdrop-blur-xs"></a>
+      <div class="relative z-10 w-full max-w-md border border-foreground bg-background shadow-[8px_8px_0_var(--cobalt)]">
+        <!-- Modal Header -->
+        <div class="border-b border-foreground bg-coral p-6 pr-14 text-left">
+          <h2 id="contact-title" class="font-display text-4xl font-extrabold text-foreground tracking-tight">ช่องทางการติดตาม</h2>
+          <p class="mt-1 text-sm text-foreground/75">ทักมาคุย แชร์ไอเดีย หรือติดตามคอนเทนต์ใหม่ได้เลย</p>
+          <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute right-4 top-4 grid size-8 place-items-center rounded-full border border-foreground bg-background text-foreground transition-colors hover:bg-lemon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </a>
+        </div>
+
+        <!-- Modal Links Grid -->
+        <div class="grid grid-cols-2 gap-3 p-6">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            <span>YouTube</span>
+          </a>
+
+          <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <span class="font-display text-lg font-bold">Tk</span>
+            <span>TikTok</span>
+          </a>
+
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" class="flex min-h-14 items-center justify-center gap-2 border-2 border-foreground bg-background p-3 text-sm font-semibold text-foreground shadow-[3px_3px_0_var(--foreground)] transition-transform hover:-translate-y-0.5">
+            <span class="font-display text-lg font-bold">f</span>
+            <span>Facebook</span>
+          </a>
+
+          <a href="mailto:hello@example.com" class="col-span-2 flex items-center justify-between border border-foreground bg-foreground p-4 text-primary-foreground hover:opacity-95 transition-opacity">
+            <span class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/></svg>
+              <span class="font-semibold text-sm">ติดต่อเรื่องงาน</span>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

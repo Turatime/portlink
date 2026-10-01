@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="22" fill="#1C1C1E"/>
+  <path d="M22 68C26 50 36 32 50 22C64 36 78 52 72 68C67 78 52 79 45 74C38 69 41 60 48 60C55 60 58 65 62 64C66 63 67 56 62 48C56 38 46 44 38 52C32 58 26 72 22 68Z" fill="url(#procreate-grad)" filter="drop-shadow(0 2px 6px rgba(255, 90, 130, 0.4))"/>
+  <defs>
+    <linearGradient id="procreate-grad" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF3B30"/>
+      <stop offset="25%" stop-color="#FF9500"/>
+      <stop offset="50%" stop-color="#FFCC00"/>
+      <stop offset="75%" stop-color="#AF52DE"/>
+      <stop offset="100%" stop-color="#007AFF"/>
+    </linearGradient>
+  </defs>
+</svg>
