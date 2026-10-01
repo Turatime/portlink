@@ -14,7 +14,7 @@
   <!-- Google Fonts: Kanit (Headings) & Noto Sans Thai (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Palette Styles -->
   <link rel="stylesheet" href="./css/styles.css" />
@@ -23,12 +23,127 @@
     :root {
       --font-display: 'Kanit', sans-serif;
       --font-sans: 'Noto Sans Thai', sans-serif;
+      --font-syne: 'Syne', sans-serif;
     }
     body {
       font-family: var(--font-sans);
     }
     .font-display {
       font-family: var(--font-display) !important;
+    }
+
+    /* Design-77 2x2 Services Grid (มาเรียนด้วยกัน - ตรงตาม Screenshot เป๊ะ 100%) */
+    .d77-services-wrap {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 5rem 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .d77-services-wrap {
+        padding: 6.5rem 1.75rem;
+      }
+    }
+    .d77-kicker {
+      color: #ff6d5d;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-family: var(--font-syne);
+    }
+    .d77-title {
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #111111;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .d77-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 2px solid #000000;
+      border-left: 2px solid #000000;
+      background-color: #000000;
+    }
+    .d77-cell {
+      position: relative;
+      display: block;
+      min-height: 11.5rem;
+      border-right: 2px solid #000000;
+      border-bottom: 2px solid #000000;
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+    @media (min-width: 640px) {
+      .d77-cell {
+        min-height: 14.5rem;
+        padding: 1.75rem;
+      }
+    }
+    .d77-cell:hover {
+      opacity: 0.92;
+    }
+    .d77-coral {
+      background-color: #ff6d5d;
+      color: #000000;
+    }
+    .d77-lemon {
+      background-color: #fdd748;
+      color: #000000;
+    }
+    .d77-cobalt {
+      background-color: #1955c8;
+      color: #ffffff;
+    }
+    .d77-white {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .d77-cell-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 2rem;
+    }
+    @media (min-width: 640px) {
+      .d77-cell-content {
+        gap: 2.5rem;
+      }
+    }
+    .d77-cell-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .d77-cell-num {
+      font-family: var(--font-syne);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .d77-cell-title {
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .d77-cell-sub {
+      font-family: var(--font-sans), 'Noto Sans Thai', sans-serif;
+      font-size: clamp(0.75rem, 1.3vw, 0.875rem);
+      font-weight: 500;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+      opacity: 0.75;
+    }
+    .d77-cobalt .d77-cell-sub {
+      opacity: 0.88;
     }
 
     /* Exact Design-77 Cobalt Contact Section Styling */
@@ -238,59 +353,64 @@
       </div>
     </section>
 
-    <!-- 4. Services Section (มาเรียนด้วยกัน - Playful Organic Cards) -->
-    <section class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-      <p class="text-xs font-bold uppercase text-primary">Learn · Create · Grow</p>
-      <h2 class="mt-2 font-display text-4xl font-black tracking-normal md:text-6xl">
-        มาเรียนด้วยกัน
-      </h2>
-
-      <div class="mt-9 grid gap-4 sm:grid-cols-2">
-        <!-- 01: สอนออนไลน์ ตัวต่อตัว (Lavender) -->
-        <a href="#contact" class="bg-lavender service-card group min-h-48 rounded-[2rem] p-6 transition hover:-translate-y-1 md:p-8 text-foreground shadow-sm">
-          <span class="text-xs font-black">/01</span>
-          <div class="mt-14 flex items-end justify-between gap-4">
-            <div>
-              <h3 class="text-2xl font-black">สอนออนไลน์</h3>
-              <p class="mt-1 text-sm opacity-70">ตัวต่อตัว</p>
+    <!-- 4. Services Grid (มาเรียนด้วยกัน - ตรงตาม Screenshot & Design-77 เป๊ะ 100%) -->
+    <section class="d77-services-wrap">
+      <p class="d77-kicker">LEARN · CREATE · GROW</p>
+      <h2 class="d77-title">มาเรียนด้วยกัน</h2>
+      <div class="d77-grid">
+        <!-- /01 -->
+        <a href="#contact" class="d77-cell d77-coral" aria-label="สอนออนไลน์ ตัวต่อตัว">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/01</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-hover:rotate-12"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            <div>
+              <h3 class="d77-cell-title">สอนออนไลน์</h3>
+              <p class="d77-cell-sub">ตัวต่อตัว</p>
+            </div>
           </div>
         </a>
 
-        <!-- 02: สอนออนไลน์ แบบกลุ่ม (Sun) -->
-        <a href="#contact" class="bg-sun service-card group min-h-48 rounded-[2rem] p-6 transition hover:-translate-y-1 md:p-8 md:translate-y-8 text-foreground shadow-sm">
-          <span class="text-xs font-black">/02</span>
-          <div class="mt-14 flex items-end justify-between gap-4">
-            <div>
-              <h3 class="text-2xl font-black">สอนออนไลน์</h3>
-              <p class="mt-1 text-sm opacity-70">แบบกลุ่ม</p>
+        <!-- /02 -->
+        <a href="#contact" class="d77-cell d77-lemon" aria-label="สอนออนไลน์ แบบกลุ่ม">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/02</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-hover:rotate-12"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            <div>
+              <h3 class="d77-cell-title">สอนออนไลน์</h3>
+              <p class="d77-cell-sub">แบบกลุ่ม</p>
+            </div>
           </div>
         </a>
 
-        <!-- 03: เวิร์กช็อป นอกสถานที่ (Mint) -->
-        <a href="#contact" class="bg-mint service-card group min-h-48 rounded-[2rem] p-6 transition hover:-translate-y-1 md:p-8 text-foreground shadow-sm">
-          <span class="text-xs font-black">/03</span>
-          <div class="mt-14 flex items-end justify-between gap-4">
-            <div>
-              <h3 class="text-2xl font-black">เวิร์กช็อป</h3>
-              <p class="mt-1 text-sm opacity-70">นอกสถานที่</p>
+        <!-- /03 -->
+        <a href="#contact" class="d77-cell d77-cobalt" aria-label="เวิร์กช็อป นอกสถานที่">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/03</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7 text-white"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-hover:rotate-12"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            <div>
+              <h3 class="d77-cell-title">เวิร์กช็อป</h3>
+              <p class="d77-cell-sub">นอกสถานที่</p>
+            </div>
           </div>
         </a>
 
-        <!-- 04: รับสร้างคอนเทนต์ (Coral) -->
-        <a href="#contact" class="bg-coral service-card group min-h-48 rounded-[2rem] p-6 transition hover:-translate-y-1 md:p-8 md:translate-y-8 text-foreground shadow-sm">
-          <span class="text-xs font-black">/04</span>
-          <div class="mt-14 flex items-end justify-between gap-4">
-            <div>
-              <h3 class="text-2xl font-black">รับสร้างคอนเทนต์</h3>
-              <p class="mt-1 text-sm opacity-70">วิดีโอ · ภาพ · เรื่องเล่า</p>
+        <!-- /04 -->
+        <a href="#contact" class="d77-cell d77-white" aria-label="รับสร้างคอนเทนต์ วิดีโอ · ภาพ · เรื่องเล่า">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/04</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="m12.296 3.464 3.02 3.95"/><path d="m19.296 3.464 3.02 3.95"/><path d="M2.5 8h19"/><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m5.296 3.464 3.02 3.95"/></svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition group-hover:rotate-12"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            <div>
+              <h3 class="d77-cell-title">รับสร้างคอนเทนต์</h3>
+              <p class="d77-cell-sub">วิดีโอ · ภาพ · เรื่องเล่า</p>
+            </div>
           </div>
         </a>
       </div>
