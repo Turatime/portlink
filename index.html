@@ -2,670 +2,1052 @@
 <html lang="th" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PANG! — Creator, Storyteller & Mentor</title>
-  <meta name="description" content="เป็นตัวเองให้ชัด แล้วเล่าออกมาให้โลกจำ · พื้นที่สำหรับคนที่อยากทำคอนเทนต์อย่างมีตัวตน" />
-  <meta property="og:title" content="PANG! — Creator, Storyteller & Mentor" />
-  <meta property="og:description" content="เป็นตัวเองให้ชัด แล้วเล่าออกมาให้โลกจำ" />
-  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>ปัง PANG! · RedNote Profile (小红书)</title>
+  <meta name="description" content="ขอบคุณทุกคนที่ติดตาม ผมคือ ปัง (PANG) โค้ชด้านเล่าเรื่องและคอนเทนต์" />
+  <meta property="og:title" content="ปัง PANG! · RedNote Profile" />
+  <meta property="og:description" content="เปลี่ยนเสียงของตัวเองให้กลายเป็นเรื่องราวที่คนจำได้" />
+  <meta property="og:type" content="profile" />
+
   <link rel="preload" as="image" href="./images/creator-portrait.jpg" />
   <link rel="preload" as="image" href="./images/video-cover.jpg" />
+  <link rel="preload" as="image" href="./images/banner_brandbuild.jpg" />
 
-  <!-- Google Fonts: Kanit (Headings) & Noto Sans Thai (Body) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
 
-  <!-- Palette Styles -->
+  <!-- Tailwind Base -->
   <link rel="stylesheet" href="./css/styles.css" />
 
   <style>
     :root {
-      --background: #090a0f;
-      --foreground: #f4f5f8;
-      --surface: #141722;
-      --section: #0c0e15;
-      --primary: #ff4757;
-      --primary-foreground: #ffffff;
-      --muted-foreground: #94a3b8;
-      --border: rgba(255, 255, 255, 0.1);
-      --font-display: 'Kanit', sans-serif;
-      --font-sans: 'Noto Sans Thai', sans-serif;
-      --font-syne: 'Syne', sans-serif;
-      --coral: #ff5252;
-      --sun: #ffd027;
-      --lavender: #181c28;
-      --mint: #00d2d3;
-      --card: #141722;
-    }
-    html, body {
-      background-color: #090a0f !important;
-      color: #f4f5f8 !important;
-      font-family: var(--font-sans);
-    }
-    main {
-      background-color: #090a0f !important;
-      color: #f4f5f8 !important;
-    }
-    .font-display {
-      font-family: var(--font-display) !important;
+      --rednote-red: #ff2442;
+      --rednote-red-hover: #e01d39;
+      --rednote-dark-bg: #1e1b18;
+      --rednote-card-bg: #292522;
+      --rednote-btn-bg: #383330;
+      --rednote-border: rgba(255, 255, 255, 0.08);
+      --font-thai: 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-en: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* Navigation */
-    .nav-contact-btn {
-      background-color: #141722 !important;
-      color: #f4f5f8 !important;
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-      transition: all 0.2s ease !important;
-    }
-    .nav-contact-btn:hover {
-      border-color: #ff4757 !important;
-      color: #ff4757 !important;
-      box-shadow: 0 0 16px rgba(255, 71, 87, 0.3) !important;
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
     }
 
-    /* Hero Section Dark Accents */
-    .hero-sparkle {
-      color: #ff4757 !important;
-    }
-    .hero-badge-tag {
-      background-color: #ff4757 !important;
-      color: #ffffff !important;
-      border: 2px solid #090a0f !important;
-      box-shadow: 0 6px 18px rgba(255, 71, 87, 0.45) !important;
-    }
-    .hero-portrait-frame {
-      background: linear-gradient(145deg, #1b2030 0%, #2e1724 100%) !important;
-      border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 71, 87, 0.15) !important;
-    }
-    .hero-cta {
-      background: linear-gradient(135deg, #ff4757 0%, #e63946 100%) !important;
-      color: #ffffff !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4) !important;
-      transition: all 0.2s ease !important;
-    }
-    .hero-cta:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 12px 32px rgba(255, 71, 87, 0.6) !important;
+    body {
+      background-color: #0c0b0a;
+      color: #ffffff;
+      font-family: var(--font-thai);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
     }
 
-    /* Video Section Dark Mode */
-    .dark-video-section {
-      background-color: #0c0e15 !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    }
-    .video-main-card {
-      border: 1px solid rgba(255, 255, 255, 0.12) !important;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7) !important;
-      background-color: #050608 !important;
-    }
-    .video-play-btn {
-      background: #ffd027 !important;
-      color: #000000 !important;
-      box-shadow: 0 6px 20px rgba(255, 208, 39, 0.45) !important;
-    }
-    .playlist-item {
-      background-color: rgba(20, 23, 34, 0.7) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      color: #f4f5f8 !important;
-      transition: all 0.2s ease !important;
-    }
-    .playlist-item:hover {
-      background-color: rgba(28, 33, 48, 0.95) !important;
-      border-color: rgba(255, 255, 255, 0.2) !important;
-    }
-    .playlist-item.active {
-      background-color: #1a1e2d !important;
-      border-color: #ff4757 !important;
-      box-shadow: 0 4px 22px rgba(255, 71, 87, 0.25) !important;
+    /* RedNote Mobile Container Frame */
+    .rednote-app-shell {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background-color: var(--rednote-dark-bg);
+      position: relative;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Design-77 2x2 Services Grid (มาเรียนด้วยกัน - Dark Edition) */
-    .d77-services-wrap {
-      max-width: 56rem;
-      margin: 0 auto;
-      padding: 5rem 1.25rem;
+    /* Banner Overlay */
+    .banner-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 280px;
+      background-image: url('./images/banner_brandbuild.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.45) blur(1px);
+      z-index: 1;
     }
-    @media (min-width: 640px) {
-      .d77-services-wrap {
-        padding: 6.5rem 1.75rem;
-      }
+    .banner-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 280px;
+      background: linear-gradient(180deg, rgba(30, 27, 24, 0.2) 0%, rgba(30, 27, 24, 0.85) 75%, var(--rednote-dark-bg) 100%);
+      z-index: 2;
     }
-    .d77-kicker {
-      color: #ff4757 !important;
-      font-size: 0.75rem;
+
+    /* Top Nav Bar */
+    .app-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(30, 27, 24, 0.6);
+    }
+    .topbar-icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      background-color: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .topbar-icon-btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Profile Info Block */
+    .profile-content {
+      position: relative;
+      z-index: 10;
+      padding: 12px 18px 20px 18px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 86px;
+      height: 86px;
+      border-radius: 9999px;
+      padding: 2.5px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.05));
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      object-fit: cover;
+      object-position: top;
+    }
+    .verified-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 22px;
+      height: 22px;
+      background-color: #3b82f6;
+      border-radius: 9999px;
+      border: 2px solid var(--rednote-dark-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    /* Stats Numbers */
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .stat-num {
+      font-family: var(--font-en);
       font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      display: block;
-      font-family: var(--font-syne);
-    }
-    .d77-title {
-      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
-      font-size: clamp(2.25rem, 5vw, 3.75rem);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      color: #ffffff !important;
+      font-size: 1.125rem;
       line-height: 1.1;
-      margin-bottom: 2rem;
+      color: #ffffff;
     }
-    .d77-grid {
+    .stat-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 3px;
+    }
+
+    /* Action Buttons (Following, DM) */
+    .btn-following {
+      background-color: var(--rednote-btn-bg);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-following.not-following {
+      background-color: var(--rednote-red);
+      border-color: var(--rednote-red);
+    }
+    .btn-dm {
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      background-color: var(--rednote-btn-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-dm:hover, .btn-following:hover {
+      opacity: 0.9;
+      transform: scale(0.98);
+    }
+
+    /* Highlight Stories (画 班 召 徒 Circles) */
+    .highlight-story {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .highlight-story:hover {
+      transform: translateY(-2px);
+    }
+    .highlight-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 9999px;
+      background-color: #0d0c0a;
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif SC', serif, var(--font-thai);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .highlight-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 400;
+    }
+
+    /* Feature Cards (Group chat, Live) */
+    .feature-card {
+      background-color: var(--rednote-card-bg);
+      border: 1px solid var(--rednote-border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.15s ease;
+    }
+    .feature-card:hover {
+      background-color: #322d2a;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .feature-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .feature-sub {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+    }
+
+    /* White Feed Bottom Sheet */
+    .feed-sheet {
+      position: relative;
+      z-index: 20;
+      background-color: #ffffff;
+      color: #111111;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.25);
+      flex: 1;
+      padding-bottom: 40px;
+    }
+
+    /* Feed Tab Bar */
+    .feed-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px 10px 18px;
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 56px;
+      background-color: #ffffff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      z-index: 30;
+    }
+    .tab-btn {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #777777;
+      padding: 4px 6px;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      background: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+    .tab-btn.active {
+      color: #111111;
+      font-size: 1.05rem;
+    }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 3px;
+      border-radius: 9999px;
+      background-color: var(--rednote-red);
+    }
+
+    /* 2-Column RedNote Post Cards Grid */
+    .feed-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 2px solid #232838;
-      border-left: 2px solid #232838;
-      background-color: #090a0f;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+      gap: 8px;
+      padding: 10px 10px 30px 10px;
+      background-color: #f7f7f8;
     }
-    .d77-cell {
-      position: relative;
-      display: block;
-      min-height: 11.5rem;
-      border-right: 2px solid #232838;
-      border-bottom: 2px solid #232838;
-      padding: 1.25rem;
+    .feed-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
-      transition: opacity 0.15s ease, transform 0.18s ease;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    @media (min-width: 640px) {
-      .d77-cell {
-        min-height: 14.5rem;
-        padding: 1.75rem;
-      }
-    }
-    .d77-cell:hover {
-      opacity: 0.94;
+    .feed-card:hover {
       transform: translateY(-2px);
-      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    .d77-coral {
-      background-color: #ff5252 !important;
-      color: #000000 !important;
+    .card-thumb-wrap {
+      position: relative;
+      width: 100%;
+      background-color: #e5e5e5;
+      overflow: hidden;
     }
-    .d77-lemon {
-      background-color: #f5b800 !important;
-      color: #000000 !important;
+    .card-thumb {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
     }
-    .d77-cobalt {
-      background-color: #1955c8 !important;
-      color: #ffffff !important;
+    .card-thumb.landscape {
+      aspect-ratio: 16 / 10;
     }
-    .d77-white {
-      background-color: #151824 !important;
-      color: #ffffff !important;
+    .badge-pinned {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background-color: var(--rednote-red);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 6px rgba(255, 36, 66, 0.4);
+      z-index: 5;
+      letter-spacing: 0.02em;
     }
-    .d77-cell-content {
+    .badge-video {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      z-index: 5;
+    }
+    .card-body {
+      padding: 9px 8px 10px 8px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 100%;
-      gap: 2rem;
+      flex: 1;
     }
-    @media (min-width: 640px) {
-      .d77-cell-content {
-        gap: 2.5rem;
-      }
-    }
-    .d77-cell-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-    .d77-cell-num {
-      font-family: var(--font-syne);
-      font-size: 0.85rem;
+    .card-title {
+      font-size: 0.825rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .d77-cell-title {
-      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
-      font-size: clamp(1.25rem, 2.5vw, 1.875rem);
-      font-weight: 800;
-      line-height: 1.25;
+      line-height: 1.35;
+      color: #222222;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       margin: 0;
     }
-    .d77-cell-sub {
-      font-family: var(--font-sans), 'Noto Sans Thai', sans-serif;
-      font-size: clamp(0.75rem, 1.3vw, 0.875rem);
-      font-weight: 500;
-      margin-top: 0.5rem;
-      margin-bottom: 0;
-      opacity: 0.75;
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
     }
-    .d77-cobalt .d77-cell-sub {
-      opacity: 0.88;
+    .card-author {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
     }
-    .d77-white .d77-cell-sub {
-      opacity: 0.7;
+    .card-author-avatar {
+      width: 17px;
+      height: 17px;
+      border-radius: 9999px;
+      object-fit: cover;
+      flex-shrink: 0;
     }
-
-    /* Cobalt Contact Section (รู้จักกันไว้ก่อน - Moody Dark Edition) */
-    .cobalt-contact-wrap {
-      background: linear-gradient(180deg, #0b1122 0%, #070a14 100%) !important;
-      border-top: 1.5px solid rgba(255, 255, 255, 0.1) !important;
-      border-bottom: 1.5px solid rgba(255, 255, 255, 0.1) !important;
-      padding: 5rem 1.25rem !important;
-      color: #ffffff !important;
-      text-align: center !important;
+    .card-author-name {
+      font-size: 0.68rem;
+      color: #666666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .cobalt-kicker {
-      color: #fdd748 !important;
-      font-size: 0.8rem !important;
-      font-weight: 800 !important;
-      letter-spacing: 0.14em !important;
-      text-transform: uppercase !important;
-      margin-bottom: 0.75rem !important;
+    .like-btn {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.7rem;
+      color: #777777;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
     }
-    .cobalt-title {
-      font-family: var(--font-display) !important;
-      font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
-      font-weight: 900 !important;
-      color: #ffffff !important;
-      line-height: 1.1 !important;
-      margin-bottom: 1rem !important;
-      letter-spacing: -0.02em !important;
+    .like-btn.liked {
+      color: var(--rednote-red);
     }
-    .cobalt-desc {
-      color: rgba(255, 255, 255, 0.7) !important;
-      font-size: 1rem !important;
-      max-width: 38rem !important;
-      margin: 0 auto 2.5rem auto !important;
-      line-height: 1.6 !important;
-    }
-    .cobalt-grid {
-      display: grid !important;
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      gap: 0.85rem !important;
-      max-width: 54rem !important;
-      margin: 0 auto !important;
-    }
-    @media (min-width: 640px) {
-      .cobalt-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-      }
-    }
-    .cobalt-social-card {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 0.6rem !important;
-      height: 3.5rem !important;
-      background-color: #141926 !important;
-      color: #ffffff !important;
-      border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
-      box-shadow: 4px 4px 0px #000000 !important;
-      font-size: 0.95rem !important;
-      font-weight: 700 !important;
-      text-decoration: none !important;
-      border-radius: 0px !important;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background-color 0.15s ease !important;
-    }
-    .cobalt-social-card:hover {
-      transform: translate(-2px, -2px) !important;
-      box-shadow: 6px 6px 0px #000000 !important;
-      border-color: rgba(255, 255, 255, 0.3) !important;
-      background-color: #1a2133 !important;
-    }
-    .cobalt-cta-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 0.6rem !important;
-      height: 3.5rem !important;
-      padding: 0 2.25rem !important;
-      background: linear-gradient(135deg, #ff4757 0%, #ee2737 100%) !important;
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      font-size: 1rem !important;
-      border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
-      border-radius: 9999px !important;
-      box-shadow: 0 8px 25px rgba(255, 71, 87, 0.45) !important;
-      transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-      text-decoration: none !important;
-      cursor: pointer !important;
-      margin-top: 2.25rem !important;
-    }
-    .cobalt-cta-btn:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 12px 30px rgba(255, 71, 87, 0.6) !important;
+    .like-btn.liked svg {
+      fill: var(--rednote-red);
+      stroke: var(--rednote-red);
     }
 
-    footer {
-      background-color: #050608 !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
-      color: rgba(255, 255, 255, 0.45) !important;
-    }
-
-    .contact-modal {
+    /* Modal / Popup for Contact and Video */
+    .rednote-modal {
       display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      place-items: center;
+      padding: 16px;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
     }
-    .contact-modal:target {
+    .rednote-modal:target, .rednote-modal.open {
       display: grid !important;
+    }
+    .modal-box {
+      width: 100%;
+      max-width: 400px;
+      background-color: #231f1d;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalPop {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
-<body class="bg-background text-foreground selection:bg-sun selection:text-foreground">
-  <main id="top" class="min-h-screen overflow-hidden bg-background text-foreground">
+<body>
 
-    <!-- 1. Navigation Header -->
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 md:px-8">
-      <a href="#top" class="font-display text-2xl font-black tracking-normal text-white">
-        PANG<span class="text-coral">!</span>
+  <!-- Outer App Shell (Simulating Xiaohongshu / RedNote profile screen) -->
+  <div class="rednote-app-shell">
+
+    <!-- Cinematic Banner Background Layer -->
+    <div class="banner-backdrop"></div>
+    <div class="banner-gradient"></div>
+
+    <!-- 1. Top Header Bar -->
+    <header class="app-topbar">
+      <!-- Back Arrow -->
+      <a href="#top" class="topbar-icon-btn" aria-label="Back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       </a>
-      <a href="#contact" class="nav-contact-btn inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5">
-        <span>ติดต่อ</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-      </a>
-    </nav>
 
-    <!-- 2. Hero Section (Pastel Tone + Organic Blob + Thinking/Story sticker) -->
-    <section class="mx-auto grid max-w-6xl items-center gap-8 px-5 pb-20 pt-8 md:grid-cols-[1.15fr_.85fr] md:px-8 md:pb-28 md:pt-14">
-      <div class="relative z-10">
-        <p class="mb-5 flex items-center gap-2 text-xs font-bold uppercase hero-sparkle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
-          <span>Creator · Storyteller · Mentor</span>
-        </p>
+      <!-- Center Title (Shown on scroll or subtitled) -->
+      <span class="font-bold text-xs tracking-wider uppercase text-white/70">RedNote · 小红书</span>
 
-        <h1 class="font-display text-6xl font-black leading-[.92] tracking-normal sm:text-7xl md:text-8xl text-white">
-          PANG<span class="text-coral">!</span>
-        </h1>
-
-        <p class="mt-6 max-w-xl text-xl font-medium leading-relaxed md:text-2xl text-slate-200">
-          เป็นตัวเองให้ชัด แล้วเล่าออกมาให้โลกจำ<br />
-          <span class="text-slate-400">พื้นที่สำหรับคนที่อยากทำคอนเทนต์อย่างมีตัวตน</span>
-        </p>
-
-        <div class="mt-9 flex flex-wrap items-center gap-4">
-          <a href="#work" class="hero-cta inline-flex items-center gap-3 rounded-full px-6 py-3.5 font-bold transition">
-            <span>ดูผลงานและบริการ</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-          </a>
-          <span class="text-sm font-medium text-slate-400">
-            เปิดสอนทั้งเด็กและผู้ใหญ่ · กระดาษและดิจิทัล
-          </span>
-        </div>
+      <!-- Right Action Icons: Search & Share -->
+      <div class="flex items-center gap-2">
+        <button type="button" class="topbar-icon-btn" aria-label="Search" onclick="document.getElementById('feed-search').focus()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <a href="#contact-modal" class="topbar-icon-btn" aria-label="Share Profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+        </a>
       </div>
+    </header>
 
-      <!-- Organic Blob Portrait Frame with Rotate Badge -->
-      <div class="relative mx-auto w-full max-w-sm">
-        <div class="portrait-frame hero-portrait-frame overflow-hidden rounded-[42%_58%_48%_52%/50%_40%_60%_50%] p-3 shadow-soft">
+    <!-- 2. Creator Profile Section -->
+    <section class="profile-content">
+      <!-- Avatar & Verified Badge -->
+      <div class="flex items-start justify-between">
+        <div class="avatar-wrapper">
           <img
             src="./images/creator-portrait.jpg"
-            alt="PANG ครีเอเตอร์และนักเล่าเรื่อง"
-            class="aspect-[4/5] w-full rounded-[inherit] object-cover object-top"
+            alt="ปัง PANG! (Storyteller)"
+            class="avatar-img"
           />
-        </div>
-        <span class="hero-badge-tag absolute -bottom-3 -left-2 rotate-[-7deg] rounded-full px-5 py-3 text-sm font-black shadow-soft">
-          คิด · เล่า · เล่น
-        </span>
-      </div>
-    </section>
-
-    <!-- 3. Work Section: 5 Selected Stories / Video Player & Interactive Switcher (bg-section) -->
-    <section id="work" class="dark-video-section py-20 md:py-28">
-      <div class="mx-auto max-w-6xl px-5 md:px-8">
-        <div class="mb-8 flex flex-wrap items-end justify-between gap-5">
-          <div>
-            <p class="text-xs font-bold uppercase hero-sparkle">Selected stories · 01—05</p>
-            <h2 class="mt-2 font-display text-4xl font-black tracking-normal md:text-6xl text-white">
-              เลือกคลิปที่อยากดู
-            </h2>
-          </div>
-          <p class="max-w-xs text-sm leading-relaxed text-slate-400">
-            รวมเรื่องเล่า ไอเดีย และเบื้องหลัง กดเลือกคลิปได้ตามใจเลย
-          </p>
-        </div>
-
-        <div class="grid gap-5 lg:grid-cols-[1fr_19rem]">
-          <!-- Main Player Box -->
-          <div class="video-main-card group relative overflow-hidden rounded-[2rem] shadow-soft">
-            <img
-              id="main-video-img"
-              src="./images/video-cover.jpg"
-              alt="เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง"
-              class="aspect-video h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
-            />
-            <div class="absolute inset-0 bg-video-shade"></div>
-            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 p-5 text-white md:p-8">
-              <div>
-                <span id="main-video-id" class="text-xs font-bold opacity-75">PLAYING · 01</span>
-                <h3 id="main-video-title" class="mt-1 max-w-lg text-2xl font-bold md:text-3xl leading-snug">
-                  เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง
-                </h3>
-              </div>
-              <a
-                id="main-video-play"
-                aria-label="เล่นคลิปวิดีโอ"
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noreferrer"
-                class="video-play-btn grid size-14 shrink-0 place-items-center rounded-full transition hover:scale-110 shadow-md cursor-pointer"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- 5-Clip Interactive Playlist -->
-          <div id="clip-playlist" class="flex gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
-            <!-- Rendered by JavaScript -->
+          <div class="verified-badge" title="Official Verified Creator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 4. Services Grid (มาเรียนด้วยกัน - ตรงตาม Screenshot & Design-77 เป๊ะ 100%) -->
-    <section class="d77-services-wrap">
-      <p class="d77-kicker">LEARN · CREATE · GROW</p>
-      <h2 class="d77-title">มาเรียนด้วยกัน</h2>
-      <div class="d77-grid">
-        <!-- /01 -->
-        <a href="#contact" class="d77-cell d77-coral" aria-label="สอนออนไลน์ ตัวต่อตัว">
-          <div class="d77-cell-content">
-            <div class="d77-cell-header">
-              <span class="d77-cell-num">/01</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-            </div>
-            <div>
-              <h3 class="d77-cell-title">สอนออนไลน์</h3>
-              <p class="d77-cell-sub">ตัวต่อตัว</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- /02 -->
-        <a href="#contact" class="d77-cell d77-lemon" aria-label="สอนออนไลน์ แบบกลุ่ม">
-          <div class="d77-cell-content">
-            <div class="d77-cell-header">
-              <span class="d77-cell-num">/02</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-            </div>
-            <div>
-              <h3 class="d77-cell-title">สอนออนไลน์</h3>
-              <p class="d77-cell-sub">แบบกลุ่ม</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- /03 -->
-        <a href="#contact" class="d77-cell d77-cobalt" aria-label="เวิร์กช็อป นอกสถานที่">
-          <div class="d77-cell-content">
-            <div class="d77-cell-header">
-              <span class="d77-cell-num">/03</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7 text-white"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h3 class="d77-cell-title">เวิร์กช็อป</h3>
-              <p class="d77-cell-sub">นอกสถานที่</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- /04 -->
-        <a href="#contact" class="d77-cell d77-white" aria-label="รับสร้างคอนเทนต์ วิดีโอ · ภาพ · เรื่องเล่า">
-          <div class="d77-cell-content">
-            <div class="d77-cell-header">
-              <span class="d77-cell-num">/04</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="m12.296 3.464 3.02 3.95"/><path d="m19.296 3.464 3.02 3.95"/><path d="M2.5 8h19"/><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m5.296 3.464 3.02 3.95"/></svg>
-            </div>
-            <div>
-              <h3 class="d77-cell-title">รับสร้างคอนเทนต์</h3>
-              <p class="d77-cell-sub">วิดีโอ · ภาพ · เรื่องเล่า</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- 5. Cobalt Contact Section (รู้จักกันไว้ก่อน - ตรงตาม Screenshot เป๊ะ 100%) -->
-    <section id="contact" class="cobalt-contact-wrap">
-      <div style="max-width: 58rem; margin: 0 auto;">
-        <p class="cobalt-kicker">Follow · Talk · Create</p>
-        <h2 class="cobalt-title">รู้จักกันไว้ก่อน</h2>
-        <p class="cobalt-desc">
-          ติดตามผลงานใหม่ แชร์ไอเดีย หรือทักมาคุยเรื่องงานได้ทุกช่องทาง
-        </p>
-
-        <!-- Social Grid (4 White Cards with Brutalist 2px border and hard shadow) -->
-        <div class="cobalt-grid">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            <span>Instagram</span>
-          </a>
-
-          <!-- YouTube -->
-          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-            <span>YouTube</span>
-          </a>
-
-          <!-- TikTok -->
-          <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
-            <span style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 900;">Tk</span>
-            <span>TikTok</span>
-          </a>
-
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
-            <span style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 900;">f</span>
-            <span>Facebook</span>
-          </a>
-        </div>
-
-        <!-- Big Black CTA Button with Coral Shadow (ตรงตามรูป Screenshot) -->
-        <div>
-          <a href="#contact-panel" class="cobalt-cta-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/></svg>
-            <span>ติดต่อเรื่องงาน</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Footer Bottom Bar -->
-    <footer class="flex flex-col gap-3 bg-foreground px-5 py-7 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-      <span>© 2026 PANG STUDIO</span>
-      <span>คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</span>
-    </footer>
-
-    <!-- 7. Contact Modal Panel (Pure CSS :target) -->
-    <section id="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title" class="contact-modal fixed inset-0 z-50 place-items-center px-4 py-8">
-      <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute inset-0 bg-black/85 backdrop-blur-sm"></a>
-      <div class="relative z-10 w-full max-w-md border border-white/20 bg-[#121520] shadow-[0_25px_60px_rgba(0,0,0,0.85)] rounded-2xl overflow-hidden">
-        <!-- Modal Header -->
-        <div class="border-b border-white/10 bg-gradient-to-r from-[#ff4757] to-[#e83848] p-6 pr-14 text-left">
-          <h2 id="contact-title" class="font-display text-3xl font-extrabold text-white tracking-tight">ช่องทางการติดต่อ</h2>
-          <p class="mt-1 text-sm text-white/90">ทักมาคุย แชร์ไอเดีย หรือร่วมงานกันได้เลย</p>
-          <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute right-4 top-4 grid size-8 place-items-center rounded-full border border-white/30 bg-black/30 text-white transition-colors hover:bg-white hover:text-black">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-          </a>
-        </div>
-
-        <!-- Modal Links -->
-        <div class="grid grid-cols-2 gap-3 p-6 bg-[#121520]">
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
-            Instagram
-          </a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
-            YouTube
-          </a>
-          <a href="https://line.me/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
-            LINE Official
-          </a>
-          <a href="mailto:hello@example.com" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
-            Email Us
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Interactive 5-Clip Switcher Script -->
-  <script>
-    const clips = [
-      { id: '01', title: 'เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง', duration: '06:42', tone: 'bg-[#ff4757] text-white', thumb: './images/video-cover.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '02', title: 'หาเสียงของตัวเองให้เจอ', duration: '04:18', tone: 'bg-[#ff6d5d] text-black', thumb: './images/banner_aivcs.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '03', title: 'เบื้องหลังคอนเทนต์หนึ่งชิ้น', duration: '08:05', tone: 'bg-[#fdd748] text-black', thumb: './images/grid_1.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '04', title: 'เปลี่ยนไอเดียธรรมดาให้จำได้', duration: '05:26', tone: 'bg-[#00d2d3] text-black', thumb: './images/grid_2.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '05', title: 'คุยเรื่องการเป็นครีเอเตอร์', duration: '09:10', tone: 'bg-[#5f27cd] text-white', thumb: './images/creator-portrait.jpg', videoUrl: 'https://www.youtube.com/' }
-    ];
-
-    let currentClipIndex = 0;
-
-    function renderPlaylist() {
-      const container = document.getElementById('clip-playlist');
-      if (!container) return;
-
-      container.innerHTML = clips.map((clip, idx) => {
-        const isActive = idx === currentClipIndex;
-        const activeClass = isActive
-          ? 'playlist-item active'
-          : 'playlist-item';
-
-        return `
-          <button
-            type="button"
-            onclick="selectClip(${idx})"
-            aria-pressed="${isActive}"
-            class="group flex min-w-64 flex-1 items-center gap-3 rounded-2xl border p-3 text-left transition lg:min-w-0 cursor-pointer ${activeClass}"
-          >
-            <span class="grid size-11 shrink-0 place-items-center rounded-xl text-xs font-black ${clip.tone}">
-              ${clip.id}
-            </span>
-            <span class="min-w-0">
-              <span class="line-clamp-1 block text-sm font-bold text-white">${clip.title}</span>
-              <span class="mt-1 block text-xs text-slate-400">${clip.duration}</span>
-            </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-[#ff4757]"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+        <!-- Follow & Message Actions (RedNote Style) -->
+        <div class="flex items-center gap-2 pt-2">
+          <button id="follow-btn" type="button" class="btn-following" onclick="toggleFollow()">
+            <span id="follow-text">Following</span>
+            <svg id="follow-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-        `;
-      }).join('');
+          <a href="#contact-modal" class="btn-dm" aria-label="Send direct message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Creator Name with Verified Mark -->
+      <div class="mt-3 flex items-center gap-1.5">
+        <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+          <span>ปัง PANG!(Storyteller)</span>
+          <svg class="text-[#3b82f6] shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="#3b82f6"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </h1>
+      </div>
+
+      <!-- ID, Category & Location Tag -->
+      <div class="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-white/50">
+        <span>โค้ชเล่าเรื่อง</span>
+        <span>·</span>
+        <span>rednote ID: pang.story</span>
+        <span>·</span>
+        <span>IP: Bangkok ⓘ</span>
+      </div>
+
+      <!-- Bio / Description -->
+      <div class="mt-3 text-[13px] leading-relaxed text-white/90">
+        <p>ขอบคุณทุกคนที่ชอบ ผมคือ ปัง (PANG) ครีเอเตอร์และนักเล่าเรื่อง</p>
+        <p class="text-white/70">ผู้ช่วย @ทีมงานปังสตูดิโอ</p>
+        <p class="text-white/70">คอร์สเรียน & ตรวจงาน: Line @pangstudio</p>
+        <p class="mt-1">
+          <a href="#contact-modal" class="text-xs font-semibold text-white/50 hover:text-white/80 underline decoration-white/30">Translate / แปลภาษา</a>
+        </p>
+      </div>
+
+      <!-- Watermark behind header (Directly from user reference screenshot) -->
+      <div class="absolute right-4 top-14 font-serif text-5xl font-black tracking-widest text-white/10 select-none pointer-events-none z-0">
+        画班招生
+      </div>
+
+      <!-- Stats Bar (Following, Followers, Likes & Saves) -->
+      <div class="mt-4 flex items-center gap-8">
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Following</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">203.2K</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1.1M</span>
+          <span class="stat-label">Likes & Saves</span>
+        </div>
+      </div>
+
+      <!-- 3. RedNote Highlight Story Circles (画 班 召 徒 / เล่า เรื่อง เป็น ภาพ) -->
+      <div class="mt-6 flex items-center justify-between px-1">
+        <!-- Circle 1: เล่า / 1:1 -->
+        <a href="#contact-modal" class="highlight-story">
+          <div class="highlight-circle">
+            <span>画</span>
+          </div>
+          <span class="highlight-label">สอนเดี่ยว 1:1</span>
+        </a>
+
+        <!-- Circle 2: คอร์ส / 班 -->
+        <a href="#contact-modal" class="highlight-story">
+          <div class="highlight-circle">
+            <span>班</span>
+          </div>
+          <span class="highlight-label">คอร์สกลุ่ม</span>
+        </a>
+
+        <!-- Circle 3: เวิร์กช็อป / 召 -->
+        <a href="#contact-modal" class="highlight-story">
+          <div class="highlight-circle">
+            <span>召</span>
+          </div>
+          <span class="highlight-label">เวิร์กช็อป</span>
+        </a>
+
+        <!-- Circle 4: ผลงาน / 徒 -->
+        <a href="#contact-modal" class="highlight-story">
+          <div class="highlight-circle">
+            <span>徒</span>
+          </div>
+          <span class="highlight-label">รับงานสื่อ</span>
+        </a>
+      </div>
+
+      <!-- 4. Quick Action Cards (Group chat & Live Replay) -->
+      <div class="mt-5 grid grid-cols-2 gap-2.5">
+        <a href="#contact-modal" class="feature-card">
+          <div class="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Group chat</div>
+            <div class="feature-sub">View details / เข้ากลุ่ม</div>
+          </div>
+        </a>
+
+        <a href="#work-video-modal" class="feature-card">
+          <div class="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Live & คลิปสอน</div>
+            <div class="feature-sub">View 12/05 replay</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. White Feed Bottom Sheet (Notes & Saves Tabs) -->
+    <section class="feed-sheet">
+      <!-- Feed Tab Bar -->
+      <div class="feed-tabs">
+        <div class="flex items-center gap-6">
+          <button type="button" class="tab-btn active" id="tab-notes" onclick="switchTab('notes')">
+            <span>Notes (โพสต์)</span>
+          </button>
+          <button type="button" class="tab-btn" id="tab-saves" onclick="switchTab('saves')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Saves (บันทึก)</span>
+          </button>
+        </div>
+
+        <!-- Search Icon inside feed -->
+        <button type="button" class="p-1.5 text-gray-500 hover:text-black transition" onclick="focusSearch()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+
+      <!-- Search Input Box (Hidden by default, togglable) -->
+      <div id="search-box" class="hidden px-3 pt-2.5">
+        <input
+          id="feed-search"
+          type="text"
+          placeholder="ค้นหาคอนเทนต์ในโพสต์..."
+          oninput="filterPosts(this.value)"
+          class="w-full rounded-full border border-gray-200 bg-gray-100 px-4 py-1.5 text-xs text-black outline-none focus:border-red-500"
+        />
+      </div>
+
+      <!-- 6. 2-Column RedNote Post Cards Grid (Notes Feed) -->
+      <div id="notes-grid" class="feed-grid">
+
+        <!-- Card 1: Pinned / ปักหมุด (Cover Video) -->
+        <div class="feed-card" onclick="openPostModal('เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง (คอร์สระบบพื้นฐาน)', './images/video-cover.jpg', '06:42', 'แชร์วิธีเรียบเรียงความคิดให้เป็นโครงสร้างเรื่องเล่าที่คนอยากฟังจนจบ เหมาะสำหรับคนที่อยากเริ่มต้นทำคอนเทนต์แต่ไม่รู้จะเริ่มตรงไหน')">
+          <div class="card-thumb-wrap">
+            <span class="badge-pinned">Pinned</span>
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              06:42
+            </span>
+            <img src="./images/video-cover.jpg" alt="เริ่มเล่าเรื่องยังไง" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">零基础 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง คอร์สระบบพื้นฐาน</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 12400)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>12.4K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pinned / ปักหมุด (2026 เวิร์กช็อป) -->
+        <div class="feed-card" onclick="openPostModal('2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปออนไลน์', './images/banner_aivcs.jpg', '04:18', 'เวิร์กช็อปเข้มข้น 8 สัปดาห์ ค้นหาแก่นแท้และสไตล์ของตัวเอง ไม่ต้องตามใคร พร้อมแบบฝึกหัดและการตรวจการบ้านรายคน')">
+          <div class="card-thumb-wrap">
+            <span class="badge-pinned">Pinned</span>
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              04:18
+            </span>
+            <img src="./images/banner_aivcs.jpg" alt="2026 หาเสียงของตัวเองให้เจอ" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปเข้มข้น LEO班</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 8900)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>8.9K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: เบื้องหลังคอนเทนต์หนึ่งชิ้น -->
+        <div class="feed-card" onclick="openPostModal('เบื้องหลังคอนเทนต์หนึ่งชิ้น ตั้งแต่ไอเดียจนถ่ายจบ', './images/grid_1.jpg', '08:05', 'เจาะลึกกระบวนการคิด เบื้องหลังการเตรียมพร็อพ การเซ็ตฉาก และการใช้ Storyboard ให้ทำงานได้ไวขึ้น')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              08:05
+            </span>
+            <img src="./images/grid_1.jpg" alt="เบื้องหลังคอนเทนต์" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">เบื้องหลังคอนเทนต์ 1 ชิ้น คิดยังไงให้ภาพและเรื่องเล่าเดินไปด้วยกัน</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 5210)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>5.2K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: เปลี่ยนไอเดียธรรมดา -->
+        <div class="feed-card" onclick="openPostModal('เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนอยากแชร์', './images/grid_2.jpg', '05:26', 'เทคนิค Hook ใน 3 วินาทีแรก และการสร้างจังหวะจะโคนในการเล่าเรื่องให้ผู้ฟังรู้สึกมีส่วนร่วมตลอดเวลา')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              05:26
+            </span>
+            <img src="./images/grid_2.jpg" alt="เปลี่ยนไอเดียธรรมดา" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนฟังแล้วจำได้ทันที</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 6140)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>6.1K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: คุยเรื่องการเป็นครีเอเตอร์ -->
+        <div class="feed-card" onclick="openPostModal('Q&A คุยเรื่องการเป็นครีเอเตอร์เต็มเวลา เล่ายังไงให้คนจำได้', './images/creator-portrait.jpg', '09:10', 'ตอบคำถามยอดฮิตจากผู้เรียน: จะเริ่มสร้างตัวตนต้องทำอย่างไร มีความกลัวกล้องแก้ยังไง และการวางแผนคอนเทนต์ระยะยาว')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              09:10
+            </span>
+            <img src="./images/creator-portrait.jpg" alt="คุยเรื่องการเป็นครีเอเตอร์" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Q&A คุยเรื่องการเป็นครีเอเตอร์เต็มเวลา เล่ายังไงให้มีคนจำได้</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 15800)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>15.8K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: สรุป 5 กฎเหล็ก -->
+        <div class="feed-card" onclick="openPostModal('สรุป 5 กฎเหล็กในการเล่าเรื่องสำหรับมือใหม่', './images/grid_3.jpg', '07:15', '5 สิ่งที่ควรทำและ 3 สิ่งที่ห้ามทำเมื่อเริ่มเล่าเรื่องหน้ากล้อง พร้อมสูตรสคริปต์ 1 นาทีที่ใครก็พูดตามได้')">
+          <div class="card-thumb-wrap">
+            <span class="badge-video">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              07:15
+            </span>
+            <img src="./images/grid_3.jpg" alt="สรุป 5 กฎเหล็ก" class="card-thumb" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">สรุป 5 กฎเหล็กในการเล่าเรื่องหน้ากล้องสำหรับมือใหม่</h3>
+            <div class="card-footer">
+              <div class="card-author">
+                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
+                <span class="card-author-name">ปัง PANG</span>
+              </div>
+              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 9320)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <span>9.3K</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Saves Feed (Hidden by default, shown when Saves tab is active) -->
+      <div id="saves-grid" class="feed-grid hidden">
+        <div class="col-span-2 py-16 text-center text-gray-400">
+          <svg class="mx-auto mb-3 text-gray-300" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <p class="text-sm font-semibold text-gray-600">เนื้อหาในส่วนนี้ถูกตั้งค่าเป็นส่วนตัว (Private)</p>
+          <p class="mt-1 text-xs text-gray-400">เฉพาะผู้ติดตามที่ได้รับอนุญาตเท่านั้น</p>
+          <a href="#contact-modal" class="mt-4 inline-block rounded-full bg-[#ff2442] px-5 py-2 text-xs font-bold text-white shadow-md">
+            ขอสิทธิ์เข้าถึง / สมัครสมาชิก
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 7. Interactive Post Detail Modal -->
+  <div id="post-modal" class="rednote-modal" onclick="closePostModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="relative">
+        <img id="modal-img" src="./images/video-cover.jpg" alt="Cover" class="aspect-video w-full object-cover" />
+        <button type="button" onclick="closePostModal()" class="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/90">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <span id="modal-badge" class="absolute bottom-3 right-3 rounded-full bg-black/70 px-2.5 py-1 text-xs font-bold text-white">06:42</span>
+      </div>
+      <div class="p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="./images/creator-portrait.jpg" alt="Author" class="size-6 rounded-full object-cover" />
+          <span class="text-xs font-bold text-white">ปัง PANG!(Storyteller)</span>
+          <span class="text-xs text-white/40">· เจ้าของโพสต์</span>
+        </div>
+        <h2 id="modal-title" class="text-base font-extrabold text-white leading-snug">ชื่อโพสต์</h2>
+        <p id="modal-desc" class="mt-2 text-xs leading-relaxed text-white/70">รายละเอียดคอนเทนต์</p>
+
+        <div class="mt-6 flex items-center gap-3">
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex-1 rounded-full bg-[#ff2442] py-2.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
+            ▶ ดูคลิปเต็มบน YouTube
+          </a>
+          <a href="#contact-modal" class="flex-1 rounded-full border border-white/20 bg-white/10 py-2.5 text-center text-xs font-bold text-white hover:bg-white/20 transition">
+            💬 ทักคุยเรื่องคอร์ส
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Contact & Social Channels Modal -->
+  <div id="contact-modal" class="rednote-modal">
+    <a href="#" class="absolute inset-0"></a>
+    <div class="modal-box relative z-10 p-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-bold text-[#ff2442]">REDNOTE · ช่องทางติดต่อ</span>
+          <h3 class="text-lg font-extrabold text-white mt-0.5">ติดต่อครีเอเตอร์ ปัง (PANG)</h3>
+        </div>
+        <a href="#" class="grid size-8 place-items-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </a>
+      </div>
+
+      <p class="mt-3 text-xs leading-relaxed text-white/70">
+        สนใจเรียน 1:1, คอร์สกลุ่ม หรือติดต่องานบรรยายและโปรดักชัน สามารถเลือกติดต่อได้ตามช่องทางด้านล่างครับ:
+      </p>
+
+      <div class="mt-5 grid grid-cols-2 gap-2.5">
+        <a href="https://line.me/" target="_blank" rel="noreferrer" class="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 p-3 text-xs font-bold text-white hover:border-[#ff2442] hover:bg-white/10 transition">
+          <span class="grid size-6 place-items-center rounded-lg bg-[#06c755] text-white text-[10px]">LINE</span>
+          <span>LINE Official</span>
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 p-3 text-xs font-bold text-white hover:border-[#ff2442] hover:bg-white/10 transition">
+          <span class="grid size-6 place-items-center rounded-lg bg-gradient-to-tr from-[#fd5949] to-[#d6249f] text-white text-[10px]">IG</span>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 p-3 text-xs font-bold text-white hover:border-[#ff2442] hover:bg-white/10 transition">
+          <span class="grid size-6 place-items-center rounded-lg bg-[#ff0000] text-white text-[10px]">YT</span>
+          <span>YouTube</span>
+        </a>
+
+        <a href="mailto:hello@example.com" class="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 p-3 text-xs font-bold text-white hover:border-[#ff2442] hover:bg-white/10 transition">
+          <span class="grid size-6 place-items-center rounded-lg bg-[#3b82f6] text-white text-[10px]">@</span>
+          <span>Email Us</span>
+        </a>
+      </div>
+
+      <div class="mt-5 border-t border-white/10 pt-4 text-center">
+        <p class="text-[11px] text-white/40">© 2026 PANG STUDIO · REDNOTE PROFILE</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Video Replay Modal -->
+  <div id="work-video-modal" class="rednote-modal">
+    <a href="#" class="absolute inset-0"></a>
+    <div class="modal-box relative z-10 p-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <h3 class="text-sm font-bold text-white">Live Replay & คอร์สวิดีโอ</h3>
+        <a href="#" class="grid size-8 place-items-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </a>
+      </div>
+      <div class="mt-4">
+        <img src="./images/video-cover.jpg" alt="Video cover" class="aspect-video w-full rounded-xl object-cover" />
+        <h4 class="mt-3 text-sm font-extrabold text-white">เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง (Live 12/05)</h4>
+        <p class="mt-1 text-xs text-white/60">บันทึกวิดีโอคอร์สถ่ายทอดสดความยาว 45 นาที พร้อมเอกสารประกอบการเรียน</p>
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="mt-4 block rounded-full bg-[#ff2442] py-2.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
+          ▶ ดูวิดีโอย้อนหลังแบบเต็ม
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Interactivity -->
+  <script>
+    // 1. Follow Button Toggle
+    let isFollowing = true;
+    function toggleFollow() {
+      isFollowing = !isFollowing;
+      const btn = document.getElementById('follow-btn');
+      const text = document.getElementById('follow-text');
+      const arrow = document.getElementById('follow-arrow');
+
+      if (isFollowing) {
+        btn.classList.remove('not-following');
+        text.textContent = 'Following';
+        arrow.style.display = 'inline-block';
+      } else {
+        btn.classList.add('not-following');
+        text.textContent = '+ Follow';
+        arrow.style.display = 'none';
+      }
     }
 
-    function selectClip(index) {
-      currentClipIndex = index;
-      const clip = clips[index];
+    // 2. Tab Switcher (Notes vs Saves)
+    function switchTab(tab) {
+      const tabNotes = document.getElementById('tab-notes');
+      const tabSaves = document.getElementById('tab-saves');
+      const gridNotes = document.getElementById('notes-grid');
+      const gridSaves = document.getElementById('saves-grid');
 
-      // Update main display
-      document.getElementById('main-video-img').src = clip.thumb;
-      document.getElementById('main-video-id').textContent = 'PLAYING · ' + clip.id;
-      document.getElementById('main-video-title').textContent = clip.title;
-      document.getElementById('main-video-play').setAttribute('aria-label', 'เล่น ' + clip.title);
-
-      // Re-render playlist buttons
-      renderPlaylist();
+      if (tab === 'notes') {
+        tabNotes.classList.add('active');
+        tabSaves.classList.remove('active');
+        gridNotes.classList.remove('hidden');
+        gridSaves.classList.add('hidden');
+      } else {
+        tabSaves.classList.add('active');
+        tabNotes.classList.remove('active');
+        gridSaves.classList.remove('hidden');
+        gridNotes.classList.add('hidden');
+      }
     }
 
-    // Init on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      renderPlaylist();
-    });
+    // 3. Search Focus
+    function focusSearch() {
+      const searchBox = document.getElementById('search-box');
+      searchBox.classList.toggle('hidden');
+      if (!searchBox.classList.contains('hidden')) {
+        document.getElementById('feed-search').focus();
+      }
+    }
+
+    // 4. Like Counter Toggle
+    function toggleLike(btn, baseCount) {
+      const isLiked = btn.classList.contains('liked');
+      const span = btn.querySelector('span');
+
+      if (isLiked) {
+        btn.classList.remove('liked');
+        span.textContent = formatCount(baseCount);
+      } else {
+        btn.classList.add('liked');
+        span.textContent = formatCount(baseCount + 1);
+      }
+    }
+
+    function formatCount(num) {
+      if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+      }
+      return num;
+    }
+
+    // 5. Post Detail Modal
+    function openPostModal(title, img, badge, desc) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-img').src = img;
+      document.getElementById('modal-badge').textContent = badge;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('post-modal').classList.add('open');
+    }
+
+    function closePostModal(e) {
+      document.getElementById('post-modal').classList.remove('open');
+    }
+
+    // 6. Filter posts
+    function filterPosts(keyword) {
+      const cards = document.querySelectorAll('#notes-grid .feed-card');
+      const lower = keyword.toLowerCase().trim();
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        if (!lower || title.includes(lower)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
 </body>
 </html>
