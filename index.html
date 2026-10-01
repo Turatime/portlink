@@ -84,41 +84,11 @@
       z-index: 2;
     }
 
-    /* Top Nav Bar */
-    .app-topbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 16px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background-color: rgba(30, 27, 24, 0.6);
-    }
-    .topbar-icon-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 9999px;
-      background-color: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .topbar-icon-btn:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
     /* Profile Info Block */
     .profile-content {
       position: relative;
       z-index: 10;
-      padding: 28px 18px 20px 18px;
+      padding: 28px 18px 24px 18px;
     }
 
     .avatar-wrapper {
@@ -171,31 +141,12 @@
       margin-top: 3px;
     }
 
-    /* Action Buttons (Following, DM) */
-    .btn-following {
-      background-color: var(--rednote-btn-bg);
-      color: #ffffff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 7px 18px;
-      border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .btn-following.not-following {
-      background-color: var(--rednote-red);
-      border-color: var(--rednote-red);
-    }
     .btn-dm {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 9999px;
       background-color: var(--rednote-btn-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -203,10 +154,11 @@
       cursor: pointer;
       transition: all 0.15s ease;
       text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     }
-    .btn-dm:hover, .btn-following:hover {
-      opacity: 0.9;
-      transform: scale(0.98);
+    .btn-dm:hover {
+      background-color: #48423e;
+      transform: scale(1.05);
     }
 
     /* Highlight Stories (画 班 召 徒 Circles) */
@@ -243,222 +195,58 @@
       font-weight: 400;
     }
 
-    /* Feature Cards (Group chat, Live) */
-    .feature-card {
+    /* Video Player Card */
+    .video-player-card {
+      position: relative;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      background-color: #0d0c0a;
+    }
+    .video-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 9999px;
+      background-color: var(--rednote-red);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 20px rgba(255, 36, 66, 0.55);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .video-play-btn:hover {
+      transform: scale(1.1);
+      background-color: var(--rednote-red-hover);
+      box-shadow: 0 6px 26px rgba(255, 36, 66, 0.75);
+    }
+
+    /* Video Playlist Items (4-5 Clips Selector) */
+    .video-clip-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
       background-color: var(--rednote-card-bg);
       border: 1px solid var(--rednote-border);
-      border-radius: 12px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
       color: #ffffff;
+      text-align: left;
+      cursor: pointer;
       transition: all 0.15s ease;
-    }
-    .feature-card:hover {
-      background-color: #322d2a;
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-    .feature-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-    .feature-sub {
-      font-size: 0.7rem;
-      color: rgba(255, 255, 255, 0.5);
-      margin-top: 2px;
-    }
-
-    /* White Feed Bottom Sheet */
-    .feed-sheet {
-      position: relative;
-      z-index: 20;
-      background-color: #ffffff;
-      color: #111111;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.25);
-      flex: 1;
-      padding-bottom: 40px;
-    }
-
-    /* Feed Tab Bar */
-    .feed-tabs {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 18px 10px 18px;
-      border-bottom: 1px solid #f0f0f0;
-      position: sticky;
-      top: 0;
-      background-color: #ffffff;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      z-index: 30;
-    }
-    .tab-btn {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #777777;
-      padding: 4px 6px;
-      position: relative;
-      cursor: pointer;
-      border: none;
-      background: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: color 0.15s ease;
-    }
-    .tab-btn.active {
-      color: #111111;
-      font-size: 1.05rem;
-    }
-    .tab-btn.active::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 28px;
-      height: 3px;
-      border-radius: 9999px;
-      background-color: var(--rednote-red);
-    }
-
-    /* 2-Column RedNote Post Cards Grid */
-    .feed-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      padding: 10px 10px 30px 10px;
-      background-color: #f7f7f8;
-    }
-    .feed-card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .feed-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .card-thumb-wrap {
-      position: relative;
       width: 100%;
-      background-color: #e5e5e5;
-      overflow: hidden;
     }
-    .card-thumb {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      aspect-ratio: 4 / 5;
+    .video-clip-btn:hover {
+      background-color: #332d29;
+      border-color: rgba(255, 255, 255, 0.2);
     }
-    .card-thumb.landscape {
-      aspect-ratio: 16 / 10;
-    }
-    .badge-pinned {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background-color: var(--rednote-red);
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 9999px;
-      box-shadow: 0 2px 6px rgba(255, 36, 66, 0.4);
-      z-index: 5;
-      letter-spacing: 0.02em;
-    }
-    .badge-video {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      z-index: 5;
-    }
-    .card-body {
-      padding: 9px 8px 10px 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-    }
-    .card-title {
-      font-size: 0.825rem;
-      font-weight: 700;
-      line-height: 1.35;
-      color: #222222;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin: 0;
-    }
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 8px;
-    }
-    .card-author {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      min-width: 0;
-    }
-    .card-author-avatar {
-      width: 17px;
-      height: 17px;
-      border-radius: 9999px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .card-author-name {
-      font-size: 0.68rem;
-      color: #666666;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .like-btn {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 0.7rem;
-      color: #777777;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .like-btn.liked {
-      color: var(--rednote-red);
-    }
-    .like-btn.liked svg {
-      fill: var(--rednote-red);
-      stroke: var(--rednote-red);
+    .video-clip-btn.active {
+      background-color: #352e2a;
+      border-color: var(--rednote-red);
+      box-shadow: 0 0 18px -2px rgba(255, 36, 66, 0.35);
     }
 
     /* Modal / Popup for Contact and Video */
@@ -501,11 +289,9 @@
     <div class="banner-backdrop"></div>
     <div class="banner-gradient"></div>
 
-
-
-    <!-- 2. Creator Profile Section -->
+    <!-- 1. Creator Profile Section -->
     <section class="profile-content">
-      <!-- Avatar & Verified Badge -->
+      <!-- Avatar & Message Action -->
       <div class="flex items-start justify-between">
         <div class="avatar-wrapper">
           <img
@@ -518,10 +304,10 @@
           </div>
         </div>
 
-        <!-- Message Action (RedNote Style) -->
-        <div class="flex items-center gap-2 pt-2">
-          <a href="#contact-modal" class="btn-dm" aria-label="Send direct message">
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <!-- Direct Message Action Icon (RedNote Style) -->
+        <div class="pt-2">
+          <a href="#contact-modal" class="btn-dm" aria-label="Send direct message" title="ติดต่อ / ส่งข้อความ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </a>
         </div>
       </div>
@@ -570,7 +356,7 @@
         </div>
       </div>
 
-      <!-- 3. RedNote Highlight Story Circles (画 班 召 徒 / เล่า เรื่อง เป็น ภาพ) -->
+      <!-- 2. RedNote Highlight Story Circles (画 班 召 徒 / เล่า เรื่อง เป็น ภาพ) -->
       <div class="mt-6 flex items-center justify-between px-1">
         <!-- Circle 1: เล่า / 1:1 -->
         <a href="#contact-modal" class="highlight-story">
@@ -605,259 +391,81 @@
         </a>
       </div>
 
-      <!-- 4. Quick Action Cards (Group chat & Live Replay) -->
-      <div class="mt-5 grid grid-cols-2 gap-2.5">
-        <a href="#contact-modal" class="feature-card">
-          <div class="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div>
-            <div class="feature-title">Group chat</div>
-            <div class="feature-sub">View details / เข้ากลุ่ม</div>
-          </div>
-        </a>
-
-        <a href="#work-video-modal" class="feature-card">
-          <div class="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
-          </div>
-          <div>
-            <div class="feature-title">Live & คลิปสอน</div>
-            <div class="feature-sub">View 12/05 replay</div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- 5. White Feed Bottom Sheet (Notes & Saves Tabs) -->
-    <section class="feed-sheet">
-      <!-- Feed Tab Bar -->
-      <div class="feed-tabs">
-        <div class="flex items-center gap-6">
-          <button type="button" class="tab-btn active" id="tab-notes" onclick="switchTab('notes')">
-            <span>Notes (โพสต์)</span>
-          </button>
-          <button type="button" class="tab-btn" id="tab-saves" onclick="switchTab('saves')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Saves (บันทึก)</span>
-          </button>
+      <!-- 3. Featured Video Section (กล่อง Video & เลือก 4-5 คลิป) -->
+      <div class="mt-7">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-3 px-0.5">
+          <span class="text-xs font-bold tracking-wider text-white/80 uppercase">
+            SELECTED VIDEOS · คลิปและบทเรียนแนะนำ
+          </span>
+          <span class="rounded-full bg-[#ff2442]/20 px-2.5 py-0.5 font-mono text-[11px] font-bold text-[#ff2442]">
+            01—05
+          </span>
         </div>
 
-        <!-- Search Icon inside feed -->
-        <button type="button" class="p-1.5 text-gray-500 hover:text-black transition" onclick="focusSearch()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </button>
-      </div>
+        <!-- Main Video Player Box -->
+        <div class="video-player-card group">
+          <img
+            id="main-video-img"
+            src="./images/video-cover.jpg"
+            alt="เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง"
+            class="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-      <!-- Search Input Box (Hidden by default, togglable) -->
-      <div id="search-box" class="hidden px-3 pt-2.5">
-        <input
-          id="feed-search"
-          type="text"
-          placeholder="ค้นหาคอนเทนต์ในโพสต์..."
-          oninput="filterPosts(this.value)"
-          class="w-full rounded-full border border-gray-200 bg-gray-100 px-4 py-1.5 text-xs text-black outline-none focus:border-red-500"
-        />
-      </div>
-
-      <!-- 6. 2-Column RedNote Post Cards Grid (Notes Feed) -->
-      <div id="notes-grid" class="feed-grid">
-
-        <!-- Card 1: Pinned / ปักหมุด (Cover Video) -->
-        <div class="feed-card" onclick="openPostModal('เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง (คอร์สระบบพื้นฐาน)', './images/video-cover.jpg', '06:42', 'แชร์วิธีเรียบเรียงความคิดให้เป็นโครงสร้างเรื่องเล่าที่คนอยากฟังจนจบ เหมาะสำหรับคนที่อยากเริ่มต้นทำคอนเทนต์แต่ไม่รู้จะเริ่มตรงไหน')">
-          <div class="card-thumb-wrap">
-            <span class="badge-pinned">Pinned</span>
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              06:42
-            </span>
-            <img src="./images/video-cover.jpg" alt="เริ่มเล่าเรื่องยังไง" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">零基础 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง คอร์สระบบพื้นฐาน</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 12400)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>12.4K</span>
-              </button>
+          <!-- Video Card Controls & Title -->
+          <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
+            <div class="min-w-0 flex-1">
+              <span id="main-video-badge" class="inline-block rounded-full bg-[#ff2442] px-2.5 py-0.5 text-[11px] font-bold text-white shadow-sm mb-1.5">
+                PLAYING · 01
+              </span>
+              <h2 id="main-video-title" class="text-sm font-bold text-white leading-snug line-clamp-2">
+                เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง
+              </h2>
+              <span id="main-video-duration" class="mt-1 block text-[11px] text-white/60 font-mono">
+                ความยาว 06:42
+              </span>
             </div>
+
+            <a
+              id="main-video-play-btn"
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="เล่นคลิปวิดีโอ"
+              class="video-play-btn shrink-0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Card 2: Pinned / ปักหมุด (2026 เวิร์กช็อป) -->
-        <div class="feed-card" onclick="openPostModal('2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปออนไลน์', './images/banner_aivcs.jpg', '04:18', 'เวิร์กช็อปเข้มข้น 8 สัปดาห์ ค้นหาแก่นแท้และสไตล์ของตัวเอง ไม่ต้องตามใคร พร้อมแบบฝึกหัดและการตรวจการบ้านรายคน')">
-          <div class="card-thumb-wrap">
-            <span class="badge-pinned">Pinned</span>
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              04:18
-            </span>
-            <img src="./images/banner_aivcs.jpg" alt="2026 หาเสียงของตัวเองให้เจอ" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปเข้มข้น LEO班</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 8900)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>8.9K</span>
-              </button>
-            </div>
-          </div>
+        <!-- Selectable 4-5 Clips List -->
+        <div class="mt-3.5 flex flex-col gap-2" id="playlist-container">
+          <!-- Rendered by JavaScript -->
         </div>
 
-        <!-- Card 3: เบื้องหลังคอนเทนต์หนึ่งชิ้น -->
-        <div class="feed-card" onclick="openPostModal('เบื้องหลังคอนเทนต์หนึ่งชิ้น ตั้งแต่ไอเดียจนถ่ายจบ', './images/grid_1.jpg', '08:05', 'เจาะลึกกระบวนการคิด เบื้องหลังการเตรียมพร็อพ การเซ็ตฉาก และการใช้ Storyboard ให้ทำงานได้ไวขึ้น')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              08:05
-            </span>
-            <img src="./images/grid_1.jpg" alt="เบื้องหลังคอนเทนต์" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">เบื้องหลังคอนเทนต์ 1 ชิ้น คิดยังไงให้ภาพและเรื่องเล่าเดินไปด้วยกัน</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 5210)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>5.2K</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: เปลี่ยนไอเดียธรรมดา -->
-        <div class="feed-card" onclick="openPostModal('เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนอยากแชร์', './images/grid_2.jpg', '05:26', 'เทคนิค Hook ใน 3 วินาทีแรก และการสร้างจังหวะจะโคนในการเล่าเรื่องให้ผู้ฟังรู้สึกมีส่วนร่วมตลอดเวลา')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              05:26
-            </span>
-            <img src="./images/grid_2.jpg" alt="เปลี่ยนไอเดียธรรมดา" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนฟังแล้วจำได้ทันที</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 6140)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>6.1K</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5: คุยเรื่องการเป็นครีเอเตอร์ -->
-        <div class="feed-card" onclick="openPostModal('Q&A คุยเรื่องการเป็นครีเอเตอร์เต็มเวลา เล่ายังไงให้คนจำได้', './images/creator-portrait.jpg', '09:10', 'ตอบคำถามยอดฮิตจากผู้เรียน: จะเริ่มสร้างตัวตนต้องทำอย่างไร มีความกลัวกล้องแก้ยังไง และการวางแผนคอนเทนต์ระยะยาว')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              09:10
-            </span>
-            <img src="./images/creator-portrait.jpg" alt="คุยเรื่องการเป็นครีเอเตอร์" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Q&A คุยเรื่องการเป็นครีเอเตอร์เต็มเวลา เล่ายังไงให้มีคนจำได้</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 15800)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>15.8K</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: สรุป 5 กฎเหล็ก -->
-        <div class="feed-card" onclick="openPostModal('สรุป 5 กฎเหล็กในการเล่าเรื่องสำหรับมือใหม่', './images/grid_3.jpg', '07:15', '5 สิ่งที่ควรทำและ 3 สิ่งที่ห้ามทำเมื่อเริ่มเล่าเรื่องหน้ากล้อง พร้อมสูตรสคริปต์ 1 นาทีที่ใครก็พูดตามได้')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              07:15
-            </span>
-            <img src="./images/grid_3.jpg" alt="สรุป 5 กฎเหล็ก" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">สรุป 5 กฎเหล็กในการเล่าเรื่องหน้ากล้องสำหรับมือใหม่</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 9320)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>9.3K</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Saves Feed (Hidden by default, shown when Saves tab is active) -->
-      <div id="saves-grid" class="feed-grid hidden">
-        <div class="col-span-2 py-16 text-center text-gray-400">
-          <svg class="mx-auto mb-3 text-gray-300" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <p class="text-sm font-semibold text-gray-600">เนื้อหาในส่วนนี้ถูกตั้งค่าเป็นส่วนตัว (Private)</p>
-          <p class="mt-1 text-xs text-gray-400">เฉพาะผู้ติดตามที่ได้รับอนุญาตเท่านั้น</p>
-          <a href="#contact-modal" class="mt-4 inline-block rounded-full bg-[#ff2442] px-5 py-2 text-xs font-bold text-white shadow-md">
-            ขอสิทธิ์เข้าถึง / สมัครสมาชิก
+        <!-- Action / Booking Banner Card -->
+        <div class="mt-5 rounded-2xl border border-white/10 bg-[#292522] p-4 text-center shadow-lg">
+          <p class="text-xs font-semibold text-white/80">สนใจเรียนเดี่ยว 1:1, คอร์สกลุ่ม หรือติดต่องานบรรยาย</p>
+          <p class="mt-0.5 text-[11px] text-white/50">สอบถามรายละเอียดและตรวจการบ้านได้ทาง Line Official</p>
+          <a href="#contact-modal" class="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#ff2442] py-2.5 text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>ทักแชท / สอบถามรายละเอียด</span>
           </a>
         </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 pb-10 text-center text-[11px] text-white/40">
+          <p>© 2026 PANG STUDIO · ALL RIGHTS RESERVED</p>
+          <p class="mt-1 text-[10px] text-white/25">คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</p>
+        </footer>
       </div>
     </section>
 
   </div>
 
-  <!-- 7. Interactive Post Detail Modal -->
-  <div id="post-modal" class="rednote-modal" onclick="closePostModal(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="relative">
-        <img id="modal-img" src="./images/video-cover.jpg" alt="Cover" class="aspect-video w-full object-cover" />
-        <button type="button" onclick="closePostModal()" class="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/90">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-        <span id="modal-badge" class="absolute bottom-3 right-3 rounded-full bg-black/70 px-2.5 py-1 text-xs font-bold text-white">06:42</span>
-      </div>
-      <div class="p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <img src="./images/creator-portrait.jpg" alt="Author" class="size-6 rounded-full object-cover" />
-          <span class="text-xs font-bold text-white">ปัง PANG!(Storyteller)</span>
-          <span class="text-xs text-white/40">· เจ้าของโพสต์</span>
-        </div>
-        <h2 id="modal-title" class="text-base font-extrabold text-white leading-snug">ชื่อโพสต์</h2>
-        <p id="modal-desc" class="mt-2 text-xs leading-relaxed text-white/70">รายละเอียดคอนเทนต์</p>
-
-        <div class="mt-6 flex items-center gap-3">
-          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex-1 rounded-full bg-[#ff2442] py-2.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
-            ▶ ดูคลิปเต็มบน YouTube
-          </a>
-          <a href="#contact-modal" class="flex-1 rounded-full border border-white/20 bg-white/10 py-2.5 text-center text-xs font-bold text-white hover:bg-white/20 transition">
-            💬 ทักคุยเรื่องคอร์ส
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 8. Contact & Social Channels Modal -->
+  <!-- Contact & Social Channels Modal -->
   <div id="contact-modal" class="rednote-modal">
     <a href="#" class="absolute inset-0"></a>
     <div class="modal-box relative z-10 p-6">
@@ -903,124 +511,68 @@
     </div>
   </div>
 
-  <!-- 9. Video Replay Modal -->
-  <div id="work-video-modal" class="rednote-modal">
-    <a href="#" class="absolute inset-0"></a>
-    <div class="modal-box relative z-10 p-6">
-      <div class="flex items-center justify-between border-b border-white/10 pb-3">
-        <h3 class="text-sm font-bold text-white">Live Replay & คอร์สวิดีโอ</h3>
-        <a href="#" class="grid size-8 place-items-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </a>
-      </div>
-      <div class="mt-4">
-        <img src="./images/video-cover.jpg" alt="Video cover" class="aspect-video w-full rounded-xl object-cover" />
-        <h4 class="mt-3 text-sm font-extrabold text-white">เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง (Live 12/05)</h4>
-        <p class="mt-1 text-xs text-white/60">บันทึกวิดีโอคอร์สถ่ายทอดสดความยาว 45 นาที พร้อมเอกสารประกอบการเรียน</p>
-        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="mt-4 block rounded-full bg-[#ff2442] py-2.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
-          ▶ ดูวิดีโอย้อนหลังแบบเต็ม
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- JavaScript Interactivity -->
+  <!-- Interactive 5-Clip Switcher Script -->
   <script>
-    // 1. Follow Button Toggle
-    let isFollowing = true;
-    function toggleFollow() {
-      isFollowing = !isFollowing;
-      const btn = document.getElementById('follow-btn');
-      const text = document.getElementById('follow-text');
-      const arrow = document.getElementById('follow-arrow');
+    const clips = [
+      { id: '01', title: 'เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง (คอร์สระบบพื้นฐาน)', duration: '06:42', thumb: './images/video-cover.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '02', title: '2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปออนไลน์', duration: '04:18', thumb: './images/banner_aivcs.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '03', title: 'เบื้องหลังคอนเทนต์ 1 ชิ้น ตั้งแต่คิดยันถ่ายจบ', duration: '08:05', thumb: './images/grid_1.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '04', title: 'เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนอยากแชร์', duration: '05:26', thumb: './images/grid_2.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '05', title: 'Q&A คุยเรื่องการเป็นครีเอเตอร์เต็มเวลา เล่ายังไงให้คนจำได้', duration: '09:10', thumb: './images/creator-portrait.jpg', videoUrl: 'https://www.youtube.com/' }
+    ];
 
-      if (isFollowing) {
-        btn.classList.remove('not-following');
-        text.textContent = 'Following';
-        arrow.style.display = 'inline-block';
-      } else {
-        btn.classList.add('not-following');
-        text.textContent = '+ Follow';
-        arrow.style.display = 'none';
-      }
+    let currentClipIndex = 0;
+
+    function renderPlaylist() {
+      const container = document.getElementById('playlist-container');
+      if (!container) return;
+
+      container.innerHTML = clips.map((clip, idx) => {
+        const isActive = idx === currentClipIndex;
+        const activeClass = isActive ? 'active' : '';
+        const badgeClass = isActive
+          ? 'bg-[#ff2442] text-white font-bold'
+          : 'bg-black/40 text-white/70 border border-white/10 font-semibold';
+
+        return `
+          <button
+            type="button"
+            onclick="selectClip(${idx})"
+            aria-pressed="${isActive}"
+            class="video-clip-btn ${activeClass}"
+          >
+            <span class="grid size-9 shrink-0 place-items-center rounded-lg text-xs font-mono ${badgeClass}">
+              ${clip.id}
+            </span>
+            <div class="min-w-0 flex-1">
+              <span class="line-clamp-1 block text-xs font-bold text-white">${clip.title}</span>
+              <span class="mt-0.5 block text-[11px] text-white/50 font-mono">${clip.duration}</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="${isActive ? '#ff2442' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 ${isActive ? 'text-[#ff2442]' : 'text-white/40'}"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+          </button>
+        `;
+      }).join('');
     }
 
-    // 2. Tab Switcher (Notes vs Saves)
-    function switchTab(tab) {
-      const tabNotes = document.getElementById('tab-notes');
-      const tabSaves = document.getElementById('tab-saves');
-      const gridNotes = document.getElementById('notes-grid');
-      const gridSaves = document.getElementById('saves-grid');
+    function selectClip(index) {
+      currentClipIndex = index;
+      const clip = clips[index];
 
-      if (tab === 'notes') {
-        tabNotes.classList.add('active');
-        tabSaves.classList.remove('active');
-        gridNotes.classList.remove('hidden');
-        gridSaves.classList.add('hidden');
-      } else {
-        tabSaves.classList.add('active');
-        tabNotes.classList.remove('active');
-        gridSaves.classList.remove('hidden');
-        gridNotes.classList.add('hidden');
-      }
+      // Update main player display
+      document.getElementById('main-video-img').src = clip.thumb;
+      document.getElementById('main-video-badge').textContent = 'PLAYING · ' + clip.id;
+      document.getElementById('main-video-title').textContent = clip.title;
+      document.getElementById('main-video-duration').textContent = 'ความยาว ' + clip.duration;
+      document.getElementById('main-video-play-btn').setAttribute('href', clip.videoUrl);
+
+      // Re-render playlist buttons
+      renderPlaylist();
     }
 
-    // 3. Search Focus
-    function focusSearch() {
-      const searchBox = document.getElementById('search-box');
-      searchBox.classList.toggle('hidden');
-      if (!searchBox.classList.contains('hidden')) {
-        document.getElementById('feed-search').focus();
-      }
-    }
-
-    // 4. Like Counter Toggle
-    function toggleLike(btn, baseCount) {
-      const isLiked = btn.classList.contains('liked');
-      const span = btn.querySelector('span');
-
-      if (isLiked) {
-        btn.classList.remove('liked');
-        span.textContent = formatCount(baseCount);
-      } else {
-        btn.classList.add('liked');
-        span.textContent = formatCount(baseCount + 1);
-      }
-    }
-
-    function formatCount(num) {
-      if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
-      }
-      return num;
-    }
-
-    // 5. Post Detail Modal
-    function openPostModal(title, img, badge, desc) {
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-img').src = img;
-      document.getElementById('modal-badge').textContent = badge;
-      document.getElementById('modal-desc').textContent = desc;
-      document.getElementById('post-modal').classList.add('open');
-    }
-
-    function closePostModal(e) {
-      document.getElementById('post-modal').classList.remove('open');
-    }
-
-    // 6. Filter posts
-    function filterPosts(keyword) {
-      const cards = document.querySelectorAll('#notes-grid .feed-card');
-      const lower = keyword.toLowerCase().trim();
-      cards.forEach(card => {
-        const title = card.querySelector('.card-title').textContent.toLowerCase();
-        if (!lower || title.includes(lower)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
+    // Init on load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPlaylist();
+    });
   </script>
 </body>
 </html>
