@@ -41,8 +41,8 @@
     }
 
     body {
-      background-color: #ffffff;
-      color: #111111;
+      background-color: var(--rednote-dark-bg);
+      color: #ffffff;
       font-family: var(--font-thai);
       margin: 0;
       padding: 0;
@@ -154,14 +154,19 @@
 
     /* 2. Video Section (Matching Screenshot 1 / design-your-story-palette) */
     .video-section-wrap {
-      background-color: #f5f3ff;
-      color: #111111;
+      background-color: var(--rednote-dark-bg);
+      color: #ffffff;
       padding: 4.5rem 1.25rem;
     }
     @media (min-width: 768px) {
       .video-section-wrap {
         padding: 5.5rem 2rem;
       }
+    }
+    .video-section-wrap h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
     .video-grid-layout {
       display: grid;
@@ -179,7 +184,8 @@
       border-radius: 28px;
       overflow: hidden;
       background-color: #0d0c0a;
-      box-shadow: 0 16px 36px rgba(124, 58, 237, 0.12);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
     }
     .video-player-box img {
@@ -212,25 +218,25 @@
       gap: 14px;
       padding: 14px 18px;
       border-radius: 18px;
-      background-color: #ffffff;
-      border: 1.5px solid rgba(112, 71, 235, 0.12);
-      color: #111111;
+      background-color: var(--rednote-card-bg);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff;
       text-align: left;
       cursor: pointer;
       transition: all 0.2s ease;
       width: 100%;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
     .palette-clip-btn:hover {
-      background-color: #ffffff;
-      border-color: rgba(112, 71, 235, 0.4);
+      background-color: #332e2b;
+      border-color: rgba(167, 139, 250, 0.55);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(112, 71, 235, 0.08);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
     }
     .palette-clip-btn.active {
-      background-color: #ffffff;
-      border: 2px solid #7047eb !important;
-      box-shadow: 0 8px 24px -2px rgba(112, 71, 235, 0.18) !important;
+      background-color: #332e2b;
+      border: 2px solid #8b5cf6 !important;
+      box-shadow: 0 8px 24px -2px rgba(139, 92, 246, 0.35) !important;
     }
 
     /* Clip Badges Exactly from Screenshot 1 */
@@ -281,24 +287,24 @@
       font-size: clamp(2.25rem, 5vw, 3.75rem);
       font-weight: 900;
       letter-spacing: -0.02em;
-      color: #111111;
+      color: #ffffff;
       line-height: 1.1;
       margin-bottom: 2rem;
     }
     .d77-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 2px solid #000000;
-      border-left: 2px solid #000000;
-      background-color: #000000;
-      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+      border-top: 2px solid #0a0908;
+      border-left: 2px solid #0a0908;
+      background-color: #0a0908;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
     }
     .d77-cell {
       position: relative;
       display: block;
       min-height: 11.5rem;
-      border-right: 2px solid #000000;
-      border-bottom: 2px solid #000000;
+      border-right: 2px solid #0a0908;
+      border-bottom: 2px solid #0a0908;
       padding: 1.25rem;
       text-decoration: none;
       transition: opacity 0.15s ease;
@@ -325,8 +331,8 @@
       color: #ffffff;
     }
     .d77-white {
-      background-color: #ffffff;
-      color: #000000;
+      background-color: var(--rednote-card-bg);
+      color: #ffffff;
     }
     .d77-cell-content {
       display: flex;
@@ -367,7 +373,8 @@
 
     /* 4. Cobalt Contact Section (รู้จักกันไว้ก่อน - Matching Screenshot 2 / design-your-story-77) */
     .cobalt-contact-wrap {
-      background-color: #1955c8;
+      background-color: var(--rednote-dark-bg);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       color: #ffffff;
       padding: 5rem 1.25rem 4.5rem 1.25rem;
       text-align: center;
@@ -397,7 +404,7 @@
     }
     .cobalt-desc {
       font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.88);
+      color: rgba(255, 255, 255, 0.65);
       max-width: 32rem;
       margin: 0 auto 2.5rem auto;
       line-height: 1.5;
@@ -420,41 +427,44 @@
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      background-color: #ffffff;
-      color: #000000;
+      background-color: var(--rednote-card-bg);
+      color: #ffffff;
       font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
       font-weight: 800;
       font-size: 0.95rem;
       padding: 0.875rem 1rem;
-      border: 2px solid #000000;
-      box-shadow: 4px 4px 0 #000000;
+      border: 2px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
       text-decoration: none;
       transition: transform 0.1s ease, box-shadow 0.1s ease;
     }
     .cobalt-social-card:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #000000;
+      transform: translateY(-2px);
+      border-color: #ff6d5d;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
     .cobalt-cta-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
-      background-color: #000000;
-      color: #ffffff;
+      background-color: #ffd027;
+      color: #000000;
       font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
       font-weight: 800;
       font-size: 1rem;
       padding: 1rem 2.25rem;
-      border: 2px solid #000000;
-      box-shadow: 5px 5px 0 #ff6d5d;
+      border: 2px solid #ffd027;
+      border-radius: 9999px;
+      box-shadow: 0 6px 22px rgba(255, 208, 39, 0.3);
       text-decoration: none;
       transition: transform 0.1s ease, box-shadow 0.1s ease;
       cursor: pointer;
     }
     .cobalt-cta-btn:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 7px 7px 0 #ff6d5d;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(255, 208, 39, 0.45);
     }
 
     /* Modal / Popup for Contact */
@@ -548,14 +558,14 @@
       <!-- Section Header -->
       <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <p class="text-xs font-bold uppercase tracking-wider text-[#7c3aed]">
+          <p class="text-xs font-bold uppercase tracking-wider text-[#a78bfa]">
             SELECTED STORIES · 01—05
           </p>
-          <h2 class="mt-1.5 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#111111]">
+          <h2 class="mt-1.5 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
             เลือกคลิปที่อยากดู
           </h2>
         </div>
-        <p class="max-w-xs text-sm leading-relaxed text-[#52525b]">
+        <p class="max-w-xs text-sm leading-relaxed text-white/60">
           รวมเรื่องเล่า ไอเดีย และเบื้องหลัง กดเลือกคลิปได้ตามใจเลย
         </p>
       </div>
@@ -609,7 +619,7 @@
   </section>
 
   <!-- 3. Services 2x2 Grid (มาเรียนด้วยกัน - ตรงตาม Screenshot 2 / design-your-story-77) -->
-  <section class="bg-white">
+  <section class="bg-[#13110f]">
     <div class="d77-services-wrap">
       <p class="d77-kicker">LEARN · CREATE · GROW</p>
       <h2 class="d77-title">มาเรียนด้วยกัน</h2>
@@ -803,10 +813,10 @@
               ${clip.id}
             </span>
             <div class="min-w-0 flex-1">
-              <span class="line-clamp-1 block text-sm font-bold text-[#18181b]">${clip.title}</span>
-              <span class="mt-0.5 block text-xs text-gray-500 font-mono">${clip.duration}</span>
+              <span class="line-clamp-1 block text-sm font-bold text-white">${clip.title}</span>
+              <span class="mt-0.5 block text-xs text-white/50 font-mono">${clip.duration}</span>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-[#7047eb] ml-auto"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-[#a78bfa] ml-auto"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
           </button>
         `;
       }).join('');
