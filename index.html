@@ -2,10 +2,10 @@
 <html lang="th" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>ปัง PANG! · RedNote Profile (小红书)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ปัง PANG! — Creator, Storyteller & Mentor</title>
   <meta name="description" content="ขอบคุณทุกคนที่ติดตาม ผมคือ ปัง (PANG) โค้ชด้านเล่าเรื่องและคอนเทนต์" />
-  <meta property="og:title" content="ปัง PANG! · RedNote Profile" />
+  <meta property="og:title" content="ปัง PANG! · Profile & Portfolio" />
   <meta property="og:description" content="เปลี่ยนเสียงของตัวเองให้กลายเป็นเรื่องราวที่คนจำได้" />
   <meta property="og:type" content="profile" />
 
@@ -13,24 +13,26 @@
   <link rel="preload" as="image" href="./images/video-cover.jpg" />
   <link rel="preload" as="image" href="./images/banner_brandbuild.jpg" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Kanit (Headings), Noto Sans Thai (Body), Syne (Accents) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind Base -->
   <link rel="stylesheet" href="./css/styles.css" />
 
   <style>
     :root {
+      --font-display: 'Kanit', sans-serif;
+      --font-thai: 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-syne: 'Syne', sans-serif;
+      --font-en: 'Plus Jakarta Sans', sans-serif;
       --rednote-red: #ff2442;
       --rednote-red-hover: #e01d39;
-      --rednote-dark-bg: #1e1b18;
+      --rednote-dark-bg: #1a1715;
       --rednote-card-bg: #292522;
       --rednote-btn-bg: #383330;
       --rednote-border: rgba(255, 255, 255, 0.08);
-      --font-thai: 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-en: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     * {
@@ -39,39 +41,36 @@
     }
 
     body {
-      background-color: #0c0b0a;
-      color: #ffffff;
+      background-color: #ffffff;
+      color: #111111;
       font-family: var(--font-thai);
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
     }
 
-    /* RedNote Mobile Container Frame */
-    .rednote-app-shell {
-      width: 100%;
-      max-width: 480px;
-      min-height: 100vh;
-      background-color: var(--rednote-dark-bg);
+    .font-display {
+      font-family: var(--font-display) !important;
+    }
+
+    /* 1. Profile Header (Xiaohongshu / RedNote Dark Aesthetic) */
+    .profile-header-wrap {
       position: relative;
-      box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
-      display: flex;
-      flex-direction: column;
+      background-color: var(--rednote-dark-bg);
+      color: #ffffff;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-
-    /* Banner Overlay */
     .banner-backdrop {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 280px;
+      height: 100%;
       background-image: url('./images/banner_brandbuild.jpg');
       background-size: cover;
       background-position: center 30%;
-      filter: brightness(0.45) blur(1px);
+      filter: brightness(0.38) blur(1px);
       z-index: 1;
     }
     .banner-gradient {
@@ -79,26 +78,37 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 280px;
-      background: linear-gradient(180deg, rgba(30, 27, 24, 0.2) 0%, rgba(30, 27, 24, 0.85) 75%, var(--rednote-dark-bg) 100%);
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(26, 23, 21, 0.35) 0%, rgba(26, 23, 21, 0.88) 65%, var(--rednote-dark-bg) 100%);
       z-index: 2;
     }
-
-    /* Profile Info Block */
     .profile-content {
       position: relative;
       z-index: 10;
-      padding: 28px 18px 24px 18px;
+      max-width: 58rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 2.75rem 1.25rem;
+    }
+    @media (min-width: 768px) {
+      .profile-content {
+        padding: 4rem 2rem 3.5rem 2rem;
+      }
     }
 
     .avatar-wrapper {
       position: relative;
-      width: 86px;
-      height: 86px;
+      width: 90px;
+      height: 90px;
       border-radius: 9999px;
-      padding: 2.5px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.05));
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      padding: 3px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+    }
+    @media (min-width: 640px) {
+      .avatar-wrapper {
+        width: 100px;
+        height: 100px;
+      }
     }
     .avatar-img {
       width: 100%;
@@ -111,8 +121,8 @@
       position: absolute;
       bottom: 2px;
       right: 2px;
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       background-color: #3b82f6;
       border-radius: 9999px;
       border: 2px solid var(--rednote-dark-bg);
@@ -122,289 +132,332 @@
       color: white;
     }
 
-    /* Stats Numbers */
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .stat-num {
-      font-family: var(--font-en);
-      font-weight: 800;
-      font-size: 1.125rem;
-      line-height: 1.1;
-      color: #ffffff;
-    }
-    .stat-label {
-      font-size: 0.72rem;
-      color: rgba(255, 255, 255, 0.55);
-      margin-top: 3px;
-    }
-
     .btn-dm {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       border-radius: 9999px;
       background-color: var(--rednote-btn-bg);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
     .btn-dm:hover {
-      background-color: #48423e;
+      background-color: #4a4440;
       transform: scale(1.05);
     }
 
-    /* Highlight Stories (画 班 召 徒 Circles) */
-    .highlight-story {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.15s ease;
+    /* 2. Video Section (Matching Screenshot 1 / design-your-story-palette) */
+    .video-section-wrap {
+      background-color: #f5f3ff;
+      color: #111111;
+      padding: 4.5rem 1.25rem;
     }
-    .highlight-story:hover {
-      transform: translateY(-2px);
+    @media (min-width: 768px) {
+      .video-section-wrap {
+        padding: 5.5rem 2rem;
+      }
     }
-    .highlight-circle {
-      width: 60px;
-      height: 60px;
-      border-radius: 9999px;
-      background-color: #0d0c0a;
-      border: 1.5px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Noto Serif SC', serif, var(--font-thai);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #ffffff;
+    .video-grid-layout {
+      display: grid;
+      gap: 1.5rem;
     }
-    .highlight-label {
-      font-size: 0.72rem;
-      color: rgba(255, 255, 255, 0.75);
-      font-weight: 400;
+    @media (min-width: 1024px) {
+      .video-grid-layout {
+        grid-template-columns: 1fr 21rem;
+        align-items: stretch;
+      }
     }
-
-    /* Video Player Card */
-    .video-player-card {
+    .video-player-box {
       position: relative;
       width: 100%;
-      border-radius: 18px;
+      border-radius: 28px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
       background-color: #0d0c0a;
+      box-shadow: 0 16px 36px rgba(124, 58, 237, 0.12);
+      display: flex;
     }
-    .video-play-btn {
-      width: 52px;
-      height: 52px;
+    .video-player-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-yellow-play-btn {
+      width: 58px;
+      height: 58px;
       border-radius: 9999px;
-      background-color: var(--rednote-red);
-      color: #ffffff;
+      background-color: #facc15;
+      color: #000000;
       display: grid;
       place-items: center;
-      box-shadow: 0 4px 20px rgba(255, 36, 66, 0.55);
+      box-shadow: 0 6px 20px rgba(250, 204, 21, 0.45);
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       text-decoration: none;
+      flex-shrink: 0;
     }
-    .video-play-btn:hover {
+    .video-yellow-play-btn:hover {
       transform: scale(1.1);
-      background-color: var(--rednote-red-hover);
-      box-shadow: 0 6px 26px rgba(255, 36, 66, 0.75);
+      background-color: #eab308;
+      box-shadow: 0 8px 24px rgba(250, 204, 21, 0.65);
     }
-
-    /* Video Playlist Items (4-5 Clips Selector) */
-    .video-clip-btn {
+    .palette-clip-btn {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background-color: var(--rednote-card-bg);
-      border: 1px solid var(--rednote-border);
-      color: #ffffff;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background-color: #ffffff;
+      border: 1.5px solid rgba(112, 71, 235, 0.12);
+      color: #111111;
       text-align: left;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
       width: 100%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
-    .video-clip-btn:hover {
-      background-color: #332d29;
-      border-color: rgba(255, 255, 255, 0.2);
+    .palette-clip-btn:hover {
+      background-color: #ffffff;
+      border-color: rgba(112, 71, 235, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(112, 71, 235, 0.08);
     }
-    .video-clip-btn.active {
-      background-color: #352e2a;
-      border-color: var(--rednote-red);
-      box-shadow: 0 0 18px -2px rgba(255, 36, 66, 0.35);
+    .palette-clip-btn.active {
+      background-color: #ffffff;
+      border: 2px solid #7047eb !important;
+      box-shadow: 0 8px 24px -2px rgba(112, 71, 235, 0.18) !important;
     }
 
-    /* White Feed Bottom Sheet ("ช่องขาว" RedNote style) */
-    .feed-sheet {
-      position: relative;
-      z-index: 20;
-      background-color: #ffffff;
+    /* Clip Badges Exactly from Screenshot 1 */
+    .badge-clip-01 {
+      background-color: #7047eb !important;
+      color: #ffffff !important;
+    }
+    .badge-clip-02 {
+      background-color: #ff6352 !important;
+      color: #ffffff !important;
+    }
+    .badge-clip-03 {
+      background-color: #fec828 !important;
+      color: #000000 !important;
+    }
+    .badge-clip-04 {
+      background-color: #4ade80 !important;
+      color: #000000 !important;
+    }
+    .badge-clip-05 {
+      background-color: #f472b6 !important;
+      color: #ffffff !important;
+    }
+
+    /* 3. Services Section (มาเรียนด้วยกัน - Matching Screenshot 2 / design-your-story-77) */
+    .d77-services-wrap {
+      max-width: 58rem;
+      margin: 0 auto;
+      padding: 5rem 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .d77-services-wrap {
+        padding: 6.5rem 1.75rem;
+      }
+    }
+    .d77-kicker {
+      color: #ff5c47;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-family: var(--font-syne);
+    }
+    .d77-title {
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
       color: #111111;
-      border-top-left-radius: 22px;
-      border-top-right-radius: 22px;
-      box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.35);
-      flex: 1;
-      margin-top: 26px;
-      overflow: hidden;
+      line-height: 1.1;
+      margin-bottom: 2rem;
     }
-    .feed-header {
-      padding: 15px 16px 12px 16px;
-      background-color: #ffffff;
-      border-bottom: 1px solid #f0f0f2;
-    }
-    .feed-grid {
+    .d77-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      padding: 10px 10px 24px 10px;
-      background-color: #f7f7f8;
+      border-top: 2px solid #000000;
+      border-left: 2px solid #000000;
+      background-color: #000000;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
     }
-    .feed-card {
-      background-color: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .feed-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
-    }
-    .card-thumb-wrap {
+    .d77-cell {
       position: relative;
-      width: 100%;
-      background-color: #e5e5e5;
-      overflow: hidden;
-    }
-    .card-thumb {
-      width: 100%;
       display: block;
-      object-fit: cover;
-      aspect-ratio: 4 / 5;
-      transition: transform 0.25s ease;
+      min-height: 11.5rem;
+      border-right: 2px solid #000000;
+      border-bottom: 2px solid #000000;
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
     }
-    .feed-card:hover .card-thumb {
-      transform: scale(1.02);
+    @media (min-width: 640px) {
+      .d77-cell {
+        min-height: 14.5rem;
+        padding: 1.75rem;
+      }
     }
-    .badge-pinned {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background-color: var(--rednote-red);
+    .d77-cell:hover {
+      opacity: 0.94;
+    }
+    .d77-coral {
+      background-color: #ff6d5d;
+      color: #000000;
+    }
+    .d77-lemon {
+      background-color: #ffd027;
+      color: #000000;
+    }
+    .d77-cobalt {
+      background-color: #1955c8;
       color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 9999px;
-      box-shadow: 0 2px 6px rgba(255, 36, 66, 0.4);
-      z-index: 5;
-      letter-spacing: 0.02em;
     }
-    .badge-video {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      background-color: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(4px);
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      z-index: 5;
+    .d77-white {
+      background-color: #ffffff;
+      color: #000000;
     }
-    .card-body {
-      padding: 9px 8px 10px 8px;
+    .d77-cell-content {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex: 1;
+      height: 100%;
+      gap: 2rem;
     }
-    .card-title {
-      font-size: 0.825rem;
+    @media (min-width: 640px) {
+      .d77-cell-content {
+        gap: 2.5rem;
+      }
+    }
+    .d77-cell-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .d77-cell-num {
+      font-family: var(--font-syne);
+      font-size: 0.85rem;
       font-weight: 700;
-      line-height: 1.35;
-      color: #222222;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      letter-spacing: -0.01em;
+    }
+    .d77-cell-title {
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+      font-weight: 800;
+      line-height: 1.25;
       margin: 0;
     }
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 8px;
-    }
-    .card-author {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      min-width: 0;
-    }
-    .card-author-avatar {
-      width: 17px;
-      height: 17px;
-      border-radius: 9999px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .card-author-name {
-      font-size: 0.68rem;
-      color: #666666;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .like-btn {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 0.7rem;
-      color: #777777;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: transform 0.1s ease;
-    }
-    .like-btn:active {
-      transform: scale(1.2);
-    }
-    .like-btn.liked {
-      color: var(--rednote-red);
-    }
-    .like-btn.liked svg {
-      fill: var(--rednote-red);
-      stroke: var(--rednote-red);
+    .d77-cell-sub {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+      opacity: 0.85;
     }
 
-    /* Modal / Popup for Contact and Video */
+    /* 4. Cobalt Contact Section (รู้จักกันไว้ก่อน - Matching Screenshot 2 / design-your-story-77) */
+    .cobalt-contact-wrap {
+      background-color: #1955c8;
+      color: #ffffff;
+      padding: 5rem 1.25rem 4.5rem 1.25rem;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .cobalt-contact-wrap {
+        padding: 6.5rem 2rem 5.5rem 2rem;
+      }
+    }
+    .cobalt-kicker {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #ffd027;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-syne);
+    }
+    .cobalt-title {
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .cobalt-desc {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 32rem;
+      margin: 0 auto 2.5rem auto;
+      line-height: 1.5;
+    }
+    .cobalt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-width: 44rem;
+      margin: 0 auto 2.25rem auto;
+    }
+    @media (min-width: 640px) {
+      .cobalt-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+      }
+    }
+    .cobalt-social-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.875rem 1rem;
+      border: 2px solid #000000;
+      box-shadow: 4px 4px 0 #000000;
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .cobalt-social-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #000000;
+    }
+    .cobalt-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: var(--font-display), 'Noto Sans Thai', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 1rem 2.25rem;
+      border: 2px solid #000000;
+      box-shadow: 5px 5px 0 #ff6d5d;
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      cursor: pointer;
+    }
+    .cobalt-cta-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 #ff6d5d;
+    }
+
+    /* Modal / Popup for Contact */
     .rednote-modal {
       display: none;
       position: fixed;
@@ -420,7 +473,7 @@
     }
     .modal-box {
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       background-color: #231f1d;
       border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -437,16 +490,13 @@
 </head>
 <body>
 
-  <!-- Outer App Shell (Simulating Xiaohongshu / RedNote profile screen) -->
-  <div class="rednote-app-shell">
-
-    <!-- Cinematic Banner Background Layer -->
+  <!-- 1. Creator Profile Section (Xiaohongshu / RedNote Dark Header) -->
+  <header class="profile-header-wrap">
     <div class="banner-backdrop"></div>
     <div class="banner-gradient"></div>
 
-    <!-- 1. Creator Profile Section -->
-    <section class="profile-content">
-      <!-- Avatar & Message Action -->
+    <div class="profile-content">
+      <!-- Top Row: Avatar & Message Icon -->
       <div class="flex items-start justify-between">
         <div class="avatar-wrapper">
           <img
@@ -455,28 +505,27 @@
             class="avatar-img"
           />
           <div class="verified-badge" title="Official Verified Creator">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
         </div>
 
-        <!-- Direct Message Action Icon (RedNote Style) -->
-        <div class="pt-2">
+        <div class="pt-1">
           <a href="#contact-modal" class="btn-dm" aria-label="Send direct message" title="ติดต่อ / ส่งข้อความ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </a>
         </div>
       </div>
 
       <!-- Creator Name with Verified Mark -->
-      <div class="mt-3 flex items-center gap-1.5">
-        <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+      <div class="mt-4 flex items-center gap-2">
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
           <span>ปัง PANG!(Storyteller)</span>
-          <svg class="text-[#3b82f6] shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="#3b82f6"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="text-[#3b82f6] shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="#3b82f6"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </h1>
       </div>
 
       <!-- ID, Category & Location Tag -->
-      <div class="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-white/50">
+      <div class="mt-1.5 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-white/55 font-medium">
         <span>โค้ชเล่าเรื่อง</span>
         <span>·</span>
         <span>rednote ID: pang.story</span>
@@ -485,304 +534,205 @@
       </div>
 
       <!-- Bio / Description -->
-      <div class="mt-3 text-[13px] leading-relaxed text-white/90">
+      <div class="mt-3.5 text-sm sm:text-base leading-relaxed text-white/90 max-w-2xl">
         <p>ขอบคุณทุกคนที่ชอบ ผมคือ ปัง (PANG) ครีเอเตอร์และนักเล่าเรื่อง</p>
-        <p class="text-white/70">ผู้ช่วย @ทีมงานปังสตูดิโอ</p>
-        <p class="text-white/70">คอร์สเรียน & ตรวจงาน: Line @pangstudio</p>
+        <p class="text-white/70 mt-0.5">ผู้ช่วย @ทีมงานปังสตูดิโอ</p>
+        <p class="text-white/70 mt-0.5">คอร์สเรียน & ตรวจงาน: Line @pangstudio</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Selected Stories Video Section (ตรงตาม Screenshot 1 / design-your-story-palette) -->
+  <section id="work" class="video-section-wrap">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-[#7c3aed]">
+            SELECTED STORIES · 01—05
+          </p>
+          <h2 class="mt-1.5 font-display text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#111111]">
+            เลือกคลิปที่อยากดู
+          </h2>
+        </div>
+        <p class="max-w-xs text-sm leading-relaxed text-[#52525b]">
+          รวมเรื่องเล่า ไอเดีย และเบื้องหลัง กดเลือกคลิปได้ตามใจเลย
+        </p>
       </div>
 
-      <!-- 2. Featured Video Section (กล่อง Video & เลือก 4-5 คลิป) -->
-      <div class="mt-6">
-        <!-- Header -->
-        <div class="flex items-center justify-between mb-3 px-0.5">
-          <span class="text-xs font-bold tracking-wider text-white/80 uppercase">
-            SELECTED VIDEOS · คลิปและบทเรียนแนะนำ
-          </span>
-          <span class="rounded-full bg-[#ff2442]/20 px-2.5 py-0.5 font-mono text-[11px] font-bold text-[#ff2442]">
-            01—05
-          </span>
-        </div>
-
-        <!-- Main Video Player Box -->
-        <div class="video-player-card group">
+      <!-- Main Player + 5 Playlist Buttons Layout -->
+      <div class="video-grid-layout">
+        <!-- Main Video Player Card -->
+        <div class="video-player-box group relative">
           <img
             id="main-video-img"
             src="./images/video-cover.jpg"
             alt="เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง"
-            class="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+            class="aspect-video md:aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
 
-          <!-- Video Card Controls & Title -->
-          <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
+          <!-- Video Details & Yellow Play Button (Directly from Screenshot 1) -->
+          <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-8 text-white">
             <div class="min-w-0 flex-1">
-              <span id="main-video-badge" class="inline-block rounded-full bg-[#ff2442] px-2.5 py-0.5 text-[11px] font-bold text-white shadow-sm mb-1.5">
+              <span id="main-video-badge" class="text-xs font-bold uppercase tracking-wider text-white/80 block mb-1">
                 PLAYING · 01
               </span>
-              <h2 id="main-video-title" class="text-sm font-bold text-white leading-snug line-clamp-2">
+              <h3 id="main-video-title" class="text-xl md:text-2xl lg:text-3xl font-bold leading-snug">
                 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง
-              </h2>
-              <span id="main-video-duration" class="mt-1 block text-[11px] text-white/60 font-mono">
+              </h3>
+              <span id="main-video-duration" class="mt-1.5 block text-xs md:text-sm text-white/60 font-mono">
                 ความยาว 06:42
               </span>
             </div>
 
+            <!-- Yellow Circular Play Button with black triangle -->
             <a
               id="main-video-play-btn"
               href="https://www.youtube.com/"
               target="_blank"
               rel="noreferrer"
               aria-label="เล่นคลิปวิดีโอ"
-              class="video-play-btn shrink-0"
+              class="video-yellow-play-btn"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#000000" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Selectable 4-5 Clips List -->
-        <div class="mt-3.5 flex flex-col gap-2" id="playlist-container">
+        <!-- 5-Clip Interactive Playlist Container -->
+        <div id="clip-playlist-container" class="flex flex-col gap-3">
           <!-- Rendered by JavaScript -->
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 4. White Feed Bottom Sheet ("ช่องขาว" RedNote style) -->
-    <section class="feed-sheet">
-      <!-- Feed Header (Notes / Saves tabs removed as requested, clean label + search) -->
-      <div class="feed-header">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="inline-block size-2 rounded-full bg-[#ff2442]"></span>
-            <span class="text-xs font-black tracking-wider text-gray-900 uppercase">
-              FEED & POSTS · คอนเทนต์และบทเรียน
-            </span>
-          </div>
-          <button type="button" class="p-1 text-gray-400 hover:text-black transition" onclick="focusSearch()" aria-label="ค้นหาโพสต์" title="ค้นหา">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </button>
-        </div>
+  <!-- 3. Services 2x2 Grid (มาเรียนด้วยกัน - ตรงตาม Screenshot 2 / design-your-story-77) -->
+  <section class="bg-white">
+    <div class="d77-services-wrap">
+      <p class="d77-kicker">LEARN · CREATE · GROW</p>
+      <h2 class="d77-title">มาเรียนด้วยกัน</h2>
 
-        <!-- Search Input Box (Hidden by default, togglable) -->
-        <div id="search-box" class="hidden pt-2.5">
-          <input
-            id="feed-search"
-            type="text"
-            placeholder="ค้นหาคอนเทนต์ในโพสต์..."
-            oninput="filterPosts(this.value)"
-            class="w-full rounded-full border border-gray-200 bg-gray-100 px-4 py-1.5 text-xs text-black outline-none focus:border-red-500"
-          />
-        </div>
-      </div>
-
-      <!-- 2-Column RedNote Post Cards Grid (6 cards with pinned badges, video time, author, likes) -->
-      <div id="notes-grid" class="feed-grid">
-        <!-- Card 1: Pinned / ปักหมุด (เริ่มเล่าเรื่องยังไง) -->
-        <div class="feed-card" onclick="openPostModal('零基础 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง คอร์สระบบพื้นฐาน', './images/video-cover.jpg', '06:42', 'คอร์สเรียนปูพื้นฐานการเล่าเรื่องตั้งแต่ศูนย์ สำหรับคนที่พูดไม่เก่ง ไม่รู้จะเริ่มตรงไหน พร้อมเทคนิคการจัดระเบียบความคิดให้เข้าใจง่าย')">
-          <div class="card-thumb-wrap">
-            <span class="badge-pinned">Pinned</span>
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              06:42
-            </span>
-            <img src="./images/video-cover.jpg" alt="เริ่มเล่าเรื่องยังไง" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">零基础 เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง คอร์สระบบพื้นฐาน</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 12400)" title="ถูกใจ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>12.4K</span>
-              </button>
+      <div class="d77-grid">
+        <!-- /01 Coral: สอนออนไลน์ ตัวต่อตัว -->
+        <a href="#contact-modal" class="d77-cell d77-coral" aria-label="สอนออนไลน์ ตัวต่อตัว">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/01</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+            </div>
+            <div>
+              <h3 class="d77-cell-title">สอนออนไลน์</h3>
+              <p class="d77-cell-sub">ตัวต่อตัว</p>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Card 2: Pinned / ปักหมุด (2026 เวิร์กช็อป) -->
-        <div class="feed-card" onclick="openPostModal('2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปเข้มข้น LEO班', './images/banner_aivcs.jpg', '04:18', 'เวิร์กช็อปเข้มข้น 8 สัปดาห์ ค้นหาแก่นแท้และสไตล์ของตัวเอง ไม่ต้องตามใคร พร้อมแบบฝึกหัดและการตรวจการบ้านรายคน')">
-          <div class="card-thumb-wrap">
-            <span class="badge-pinned">Pinned</span>
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              04:18
-            </span>
-            <img src="./images/banner_aivcs.jpg" alt="2026 หาเสียงของตัวเองให้เจอ" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปเข้มข้น LEO班</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 8900)" title="ถูกใจ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>8.9K</span>
-              </button>
+        <!-- /02 Lemon: สอนออนไลน์ แบบกลุ่ม -->
+        <a href="#contact-modal" class="d77-cell d77-lemon" aria-label="สอนออนไลน์ แบบกลุ่ม">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/02</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+            </div>
+            <div>
+              <h3 class="d77-cell-title">สอนออนไลน์</h3>
+              <p class="d77-cell-sub">แบบกลุ่ม</p>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Card 3: เบื้องหลังคอนเทนต์หนึ่งชิ้น -->
-        <div class="feed-card" onclick="openPostModal('เบื้องหลังคอนเทนต์ 1 ชิ้น คิดยังไงให้ภาพและเรื่องเล่าเดินไปด้วยกัน', './images/grid_1.jpg', '08:05', 'เจาะลึกกระบวนการคิด เบื้องหลังการเตรียมพร็อพ การเซ็ตฉาก และการใช้ Storyboard ให้ทำงานได้ไวขึ้น')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              08:05
-            </span>
-            <img src="./images/grid_1.jpg" alt="เบื้องหลังคอนเทนต์" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">เบื้องหลังคอนเทนต์ 1 ชิ้น คิดยังไงให้ภาพและเรื่องเล่าเดินไปด้วยกัน</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 5210)" title="ถูกใจ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>5.2K</span>
-              </button>
+        <!-- /03 Cobalt: เวิร์กช็อป นอกสถานที่ -->
+        <a href="#contact-modal" class="d77-cell d77-cobalt" aria-label="เวิร์กช็อป นอกสถานที่">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/03</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7 text-white"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h3 class="d77-cell-title">เวิร์กช็อป</h3>
+              <p class="d77-cell-sub">นอกสถานที่</p>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Card 4: เปลี่ยนไอเดียธรรมดา -->
-        <div class="feed-card" onclick="openPostModal('เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนอยากแชร์', './images/grid_2.jpg', '05:26', 'เทคนิค Hook ใน 3 วินาทีแรก และการสร้างจังหวะจะโคนในการเล่าเรื่องให้ผู้ฟังรู้สึกมีส่วนร่วมตลอดเวลา')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              05:26
-            </span>
-            <img src="./images/grid_2.jpg" alt="เปลี่ยนไอเดียธรรมดา" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนฟังแล้วจำได้ทันที</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 6140)" title="ถูกใจ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>6.1K</span>
-              </button>
+        <!-- /04 White: รับสร้างคอนเทนต์ วิดีโอ · ภาพ · เรื่องเล่า -->
+        <a href="#contact-modal" class="d77-cell d77-white" aria-label="รับสร้างคอนเทนต์ วิดีโอ · ภาพ · เรื่องเล่า">
+          <div class="d77-cell-content">
+            <div class="d77-cell-header">
+              <span class="d77-cell-num">/04</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 sm:size-7"><path d="m12.296 3.464 3.02 3.95"/><path d="m19.296 3.464 3.02 3.95"/><path d="M2.5 8h19"/><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m5.296 3.464 3.02 3.95"/></svg>
+            </div>
+            <div>
+              <h3 class="d77-cell-title">รับสร้างคอนเทนต์</h3>
+              <p class="d77-cell-sub">วิดีโอ · ภาพ · เรื่องเล่า</p>
             </div>
           </div>
-        </div>
-
-        <!-- Card 5: วิธีพูดหน้ากล้อง -->
-        <div class="feed-card" onclick="openPostModal('วิธีพูดหน้ากล้องให้เป็นธรรมชาติ ไม่เกร็ง ไม่ท่องจำ', './images/creator-portrait.jpg', '09:10', 'แบบฝึกหัดคลายความกลัวหน้ากล้อง การมองเลนส์ให้เหมือนมองเพื่อนสนิท และการพูดแบบมีอารมณ์ร่วม')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              09:10
-            </span>
-            <img src="./images/creator-portrait.jpg" alt="วิธีพูดหน้ากล้อง" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">วิธีพูดหน้ากล้องให้เป็นธรรมชาติ ไม่เกร็ง ไม่ท่องจำ</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 15800)" title="ถูกใจ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>15.8K</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: สรุป 5 กฎเหล็ก -->
-        <div class="feed-card" onclick="openPostModal('สรุป 5 กฎเหล็กในการเล่าเรื่องสำหรับมือใหม่', './images/grid_3.jpg', '07:15', '5 สิ่งที่ควรทำและ 3 สิ่งที่ห้ามทำเมื่อเริ่มเล่าเรื่องหน้ากล้อง พร้อมสูตรสคริปต์ 1 นาทีที่ใครก็พูดตามได้')">
-          <div class="card-thumb-wrap">
-            <span class="badge-video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-              07:15
-            </span>
-            <img src="./images/grid_3.jpg" alt="สรุป 5 กฎเหล็ก" class="card-thumb" />
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">สรุป 5 กฎเหล็กในการเล่าเรื่องหน้ากล้องสำหรับมือใหม่</h3>
-            <div class="card-footer">
-              <div class="card-author">
-                <img src="./images/creator-portrait.jpg" alt="PANG" class="card-author-avatar" />
-                <span class="card-author-name">ปัง PANG</span>
-              </div>
-              <button type="button" class="like-btn" onclick="event.stopPropagation(); toggleLike(this, 9320)" title="ถูกใจ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span>9.3K</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Action / Booking Banner Card inside white sheet -->
-      <div class="px-3.5 pt-2 pb-6">
-        <div class="rounded-2xl border border-gray-200 bg-[#f9f9fb] p-4 text-center shadow-sm">
-          <p class="text-xs font-bold text-gray-800">สนใจเรียนเดี่ยว 1:1, คอร์สกลุ่ม หรือติดต่องานบรรยาย</p>
-          <p class="mt-0.5 text-[11px] text-gray-500">สอบถามรายละเอียดและตรวจการบ้านได้ทาง Line Official</p>
-          <a href="#contact-modal" class="mt-3 inline-flex items-center justify-center gap-2 w-full rounded-full bg-[#ff2442] py-2.5 text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span>ทักแชท / สอบถามรายละเอียด</span>
-          </a>
-        </div>
-
-        <!-- Footer -->
-        <footer class="mt-6 text-center text-[11px] text-gray-400">
-          <p>© 2026 PANG STUDIO · ALL RIGHTS RESERVED</p>
-          <p class="mt-1 text-[10px] text-gray-400">คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</p>
-        </footer>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- Interactive Post Detail Modal -->
-  <div id="post-modal" class="rednote-modal" onclick="closePostModal(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="relative">
-        <img id="modal-img" src="./images/video-cover.jpg" alt="Cover" class="aspect-video w-full object-cover" />
-        <button type="button" onclick="closePostModal()" class="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-black/60 text-white backdrop-blur-sm hover:bg-black/90">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-        <span id="modal-badge" class="absolute bottom-3 right-3 rounded-full bg-black/70 px-2.5 py-1 text-xs font-bold text-white">06:42</span>
-      </div>
-      <div class="p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <img src="./images/creator-portrait.jpg" alt="Author" class="size-6 rounded-full object-cover" />
-          <span class="text-xs font-bold text-white">ปัง PANG!(Storyteller)</span>
-          <span class="text-xs text-white/40">· เจ้าของโพสต์</span>
-        </div>
-        <h2 id="modal-title" class="text-base font-extrabold text-white leading-snug">ชื่อโพสต์</h2>
-        <p id="modal-desc" class="mt-2 text-xs leading-relaxed text-white/70">รายละเอียดคอนเทนต์</p>
-
-        <div class="mt-6 flex items-center gap-3">
-          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex-1 rounded-full bg-[#ff2442] py-2.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#e01d39] transition">
-            ▶ ดูคลิปเต็มบน YouTube
-          </a>
-          <a href="#contact-modal" class="flex-1 rounded-full border border-white/20 bg-white/10 py-2.5 text-center text-xs font-bold text-white hover:bg-white/20 transition">
-            💬 ทักคุยเรื่องคอร์ส
-          </a>
-        </div>
+        </a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Contact & Social Channels Modal -->
+  <!-- 4. Cobalt Contact Section (รู้จักกันไว้ก่อน - ตรงตาม Screenshot 2 / design-your-story-77) -->
+  <section id="contact" class="cobalt-contact-wrap">
+    <div style="max-width: 58rem; margin: 0 auto;">
+      <p class="cobalt-kicker">Follow · Talk · Create</p>
+      <h2 class="cobalt-title">รู้จักกันไว้ก่อน</h2>
+      <p class="cobalt-desc">
+        ติดตามผลงานใหม่ แชร์ไอเดีย หรือทักมาคุยเรื่องงานได้ทุกช่องทาง
+      </p>
+
+      <!-- Social Grid (4 White Cards with Brutalist 2px border and hard shadow) -->
+      <div class="cobalt-grid">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span>Instagram</span>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+          <span>YouTube</span>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
+          <span style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 900;">Tk</span>
+          <span>TikTok</span>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" class="cobalt-social-card">
+          <span style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 900;">f</span>
+          <span>Facebook</span>
+        </a>
+      </div>
+
+      <!-- Big Black CTA Button with Coral Shadow (ตรงตาม Screenshot 2) -->
+      <div>
+        <a href="#contact-modal" class="cobalt-cta-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/></svg>
+          <span>ติดต่อเรื่องงาน</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Footer Bottom Bar -->
+  <footer class="flex flex-col gap-3 bg-[#0d0c0a] px-5 py-7 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-8 border-t border-white/10">
+    <span>© 2026 PANG STUDIO</span>
+    <span>คิดให้ชัด · เล่าให้สนุก · เป็นตัวเอง</span>
+  </footer>
+
+  <!-- 6. Contact Modal Panel -->
   <div id="contact-modal" class="rednote-modal">
     <a href="#" class="absolute inset-0"></a>
     <div class="modal-box relative z-10 p-6">
       <div class="flex items-center justify-between border-b border-white/10 pb-4">
         <div>
-          <span class="text-xs font-bold text-[#ff2442]">REDNOTE · ช่องทางติดต่อ</span>
+          <span class="text-xs font-bold text-[#ff2442]">PANG STUDIO · ช่องทางติดต่อ</span>
           <h3 class="text-lg font-extrabold text-white mt-0.5">ติดต่อครีเอเตอร์ ปัง (PANG)</h3>
         </div>
         <a href="#" class="grid size-8 place-items-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white">
@@ -817,49 +767,46 @@
       </div>
 
       <div class="mt-5 border-t border-white/10 pt-4 text-center">
-        <p class="text-[11px] text-white/40">© 2026 PANG STUDIO · REDNOTE PROFILE</p>
+        <p class="text-[11px] text-white/40">© 2026 PANG STUDIO · ALL RIGHTS RESERVED</p>
       </div>
     </div>
   </div>
 
-  <!-- Interactive 5-Clip Switcher Script -->
+  <!-- 7. Interactive 5-Clip Switcher Script -->
   <script>
     const clips = [
-      { id: '01', title: 'เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง (คอร์สระบบพื้นฐาน)', duration: '06:42', thumb: './images/video-cover.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '02', title: '2026期 หาเสียงของตัวเองให้เจอ เวิร์กช็อปออนไลน์', duration: '04:18', thumb: './images/banner_aivcs.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '03', title: 'เบื้องหลังคอนเทนต์ 1 ชิ้น ตั้งแต่คิดยันถ่ายจบ', duration: '08:05', thumb: './images/grid_1.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '04', title: 'เปลี่ยนไอเดียธรรมดา ให้กลายเป็นเรื่องที่คนอยากแชร์', duration: '05:26', thumb: './images/grid_2.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '05', title: 'Q&A คุยเรื่องการเป็นครีเอเตอร์เต็มเวลา เล่ายังไงให้คนจำได้', duration: '09:10', thumb: './images/creator-portrait.jpg', videoUrl: 'https://www.youtube.com/' }
+      { id: '01', title: 'เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง', duration: '06:42', badgeClass: 'badge-clip-01', thumb: './images/video-cover.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '02', title: 'หาเสียงของตัวเองให้เจอ', duration: '04:18', badgeClass: 'badge-clip-02', thumb: './images/banner_aivcs.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '03', title: 'เบื้องหลังคอนเทนต์หนึ่งชิ้น', duration: '08:05', badgeClass: 'badge-clip-03', thumb: './images/grid_1.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '04', title: 'เปลี่ยนไอเดียธรรมดาให้จำได้', duration: '05:26', badgeClass: 'badge-clip-04', thumb: './images/grid_2.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '05', title: 'คุยเรื่องการเป็นครีเอเตอร์', duration: '09:10', badgeClass: 'badge-clip-05', thumb: './images/creator-portrait.jpg', videoUrl: 'https://www.youtube.com/' }
     ];
 
     let currentClipIndex = 0;
 
     function renderPlaylist() {
-      const container = document.getElementById('playlist-container');
+      const container = document.getElementById('clip-playlist-container');
       if (!container) return;
 
       container.innerHTML = clips.map((clip, idx) => {
         const isActive = idx === currentClipIndex;
         const activeClass = isActive ? 'active' : '';
-        const badgeClass = isActive
-          ? 'bg-[#ff2442] text-white font-bold'
-          : 'bg-black/40 text-white/70 border border-white/10 font-semibold';
 
         return `
           <button
             type="button"
             onclick="selectClip(${idx})"
             aria-pressed="${isActive}"
-            class="video-clip-btn ${activeClass}"
+            class="palette-clip-btn ${activeClass}"
           >
-            <span class="grid size-9 shrink-0 place-items-center rounded-lg text-xs font-mono ${badgeClass}">
+            <span class="grid size-11 shrink-0 place-items-center rounded-xl text-xs font-mono font-bold ${clip.badgeClass}">
               ${clip.id}
             </span>
             <div class="min-w-0 flex-1">
-              <span class="line-clamp-1 block text-xs font-bold text-white">${clip.title}</span>
-              <span class="mt-0.5 block text-[11px] text-white/50 font-mono">${clip.duration}</span>
+              <span class="line-clamp-1 block text-sm font-bold text-[#18181b]">${clip.title}</span>
+              <span class="mt-0.5 block text-xs text-gray-500 font-mono">${clip.duration}</span>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="${isActive ? '#ff2442' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 ${isActive ? 'text-[#ff2442]' : 'text-white/40'}"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-[#7047eb] ml-auto"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
           </button>
         `;
       }).join('');
@@ -880,65 +827,7 @@
       renderPlaylist();
     }
 
-    // Like Counter Toggle
-    function toggleLike(btn, baseCount) {
-      const isLiked = btn.classList.contains('liked');
-      const span = btn.querySelector('span');
-
-      if (isLiked) {
-        btn.classList.remove('liked');
-        span.textContent = formatCount(baseCount);
-      } else {
-        btn.classList.add('liked');
-        span.textContent = formatCount(baseCount + 1);
-      }
-    }
-
-    function formatCount(num) {
-      if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
-      }
-      return num;
-    }
-
-    // Post Detail Modal
-    function openPostModal(title, img, badge, desc) {
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-img').src = img;
-      document.getElementById('modal-badge').textContent = badge;
-      document.getElementById('modal-desc').textContent = desc;
-      document.getElementById('post-modal').classList.add('open');
-    }
-
-    function closePostModal(e) {
-      if (e) e.stopPropagation();
-      document.getElementById('post-modal').classList.remove('open');
-    }
-
-    // Feed Search & Filter
-    function focusSearch() {
-      const searchBox = document.getElementById('search-box');
-      if (!searchBox) return;
-      searchBox.classList.toggle('hidden');
-      if (!searchBox.classList.contains('hidden')) {
-        document.getElementById('feed-search').focus();
-      }
-    }
-
-    function filterPosts(keyword) {
-      const cards = document.querySelectorAll('#notes-grid .feed-card');
-      const lower = keyword.toLowerCase().trim();
-      cards.forEach(card => {
-        const title = card.querySelector('.card-title').textContent.toLowerCase();
-        if (!lower || title.includes(lower)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Init on load
+    // Init on page load
     document.addEventListener('DOMContentLoaded', () => {
       renderPlaylist();
     });
