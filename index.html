@@ -21,18 +21,109 @@
 
   <style>
     :root {
+      --background: #090a0f;
+      --foreground: #f4f5f8;
+      --surface: #141722;
+      --section: #0c0e15;
+      --primary: #ff4757;
+      --primary-foreground: #ffffff;
+      --muted-foreground: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
       --font-display: 'Kanit', sans-serif;
       --font-sans: 'Noto Sans Thai', sans-serif;
       --font-syne: 'Syne', sans-serif;
+      --coral: #ff5252;
+      --sun: #ffd027;
+      --lavender: #181c28;
+      --mint: #00d2d3;
+      --card: #141722;
     }
-    body {
+    html, body {
+      background-color: #090a0f !important;
+      color: #f4f5f8 !important;
       font-family: var(--font-sans);
+    }
+    main {
+      background-color: #090a0f !important;
+      color: #f4f5f8 !important;
     }
     .font-display {
       font-family: var(--font-display) !important;
     }
 
-    /* Design-77 2x2 Services Grid (มาเรียนด้วยกัน - ตรงตาม Screenshot เป๊ะ 100%) */
+    /* Navigation */
+    .nav-contact-btn {
+      background-color: #141722 !important;
+      color: #f4f5f8 !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      transition: all 0.2s ease !important;
+    }
+    .nav-contact-btn:hover {
+      border-color: #ff4757 !important;
+      color: #ff4757 !important;
+      box-shadow: 0 0 16px rgba(255, 71, 87, 0.3) !important;
+    }
+
+    /* Hero Section Dark Accents */
+    .hero-sparkle {
+      color: #ff4757 !important;
+    }
+    .hero-badge-tag {
+      background-color: #ff4757 !important;
+      color: #ffffff !important;
+      border: 2px solid #090a0f !important;
+      box-shadow: 0 6px 18px rgba(255, 71, 87, 0.45) !important;
+    }
+    .hero-portrait-frame {
+      background: linear-gradient(145deg, #1b2030 0%, #2e1724 100%) !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 71, 87, 0.15) !important;
+    }
+    .hero-cta {
+      background: linear-gradient(135deg, #ff4757 0%, #e63946 100%) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4) !important;
+      transition: all 0.2s ease !important;
+    }
+    .hero-cta:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 12px 32px rgba(255, 71, 87, 0.6) !important;
+    }
+
+    /* Video Section Dark Mode */
+    .dark-video-section {
+      background-color: #0c0e15 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .video-main-card {
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7) !important;
+      background-color: #050608 !important;
+    }
+    .video-play-btn {
+      background: #ffd027 !important;
+      color: #000000 !important;
+      box-shadow: 0 6px 20px rgba(255, 208, 39, 0.45) !important;
+    }
+    .playlist-item {
+      background-color: rgba(20, 23, 34, 0.7) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      color: #f4f5f8 !important;
+      transition: all 0.2s ease !important;
+    }
+    .playlist-item:hover {
+      background-color: rgba(28, 33, 48, 0.95) !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .playlist-item.active {
+      background-color: #1a1e2d !important;
+      border-color: #ff4757 !important;
+      box-shadow: 0 4px 22px rgba(255, 71, 87, 0.25) !important;
+    }
+
+    /* Design-77 2x2 Services Grid (มาเรียนด้วยกัน - Dark Edition) */
     .d77-services-wrap {
       max-width: 56rem;
       margin: 0 auto;
@@ -44,10 +135,10 @@
       }
     }
     .d77-kicker {
-      color: #ff6d5d;
+      color: #ff4757 !important;
       font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
       display: block;
@@ -58,26 +149,27 @@
       font-size: clamp(2.25rem, 5vw, 3.75rem);
       font-weight: 900;
       letter-spacing: -0.02em;
-      color: #111111;
+      color: #ffffff !important;
       line-height: 1.1;
       margin-bottom: 2rem;
     }
     .d77-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 2px solid #000000;
-      border-left: 2px solid #000000;
-      background-color: #000000;
+      border-top: 2px solid #232838;
+      border-left: 2px solid #232838;
+      background-color: #090a0f;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
     }
     .d77-cell {
       position: relative;
       display: block;
       min-height: 11.5rem;
-      border-right: 2px solid #000000;
-      border-bottom: 2px solid #000000;
+      border-right: 2px solid #232838;
+      border-bottom: 2px solid #232838;
       padding: 1.25rem;
       text-decoration: none;
-      transition: opacity 0.15s ease;
+      transition: opacity 0.15s ease, transform 0.18s ease;
     }
     @media (min-width: 640px) {
       .d77-cell {
@@ -86,23 +178,25 @@
       }
     }
     .d77-cell:hover {
-      opacity: 0.92;
+      opacity: 0.94;
+      transform: translateY(-2px);
+      z-index: 10;
     }
     .d77-coral {
-      background-color: #ff6d5d;
-      color: #000000;
+      background-color: #ff5252 !important;
+      color: #000000 !important;
     }
     .d77-lemon {
-      background-color: #fdd748;
-      color: #000000;
+      background-color: #f5b800 !important;
+      color: #000000 !important;
     }
     .d77-cobalt {
-      background-color: #1955c8;
-      color: #ffffff;
+      background-color: #1955c8 !important;
+      color: #ffffff !important;
     }
     .d77-white {
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #151824 !important;
+      color: #ffffff !important;
     }
     .d77-cell-content {
       display: flex;
@@ -145,21 +239,24 @@
     .d77-cobalt .d77-cell-sub {
       opacity: 0.88;
     }
+    .d77-white .d77-cell-sub {
+      opacity: 0.7;
+    }
 
-    /* Exact Design-77 Cobalt Contact Section Styling */
+    /* Cobalt Contact Section (รู้จักกันไว้ก่อน - Moody Dark Edition) */
     .cobalt-contact-wrap {
-      background-color: #1652ea !important;
-      border-top: 2px solid #000000 !important;
-      border-bottom: 2px solid #000000 !important;
-      padding: 4.5rem 1.25rem !important;
+      background: linear-gradient(180deg, #0b1122 0%, #070a14 100%) !important;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+      padding: 5rem 1.25rem !important;
       color: #ffffff !important;
       text-align: center !important;
     }
     .cobalt-kicker {
-      color: #ffd200 !important;
+      color: #fdd748 !important;
       font-size: 0.8rem !important;
       font-weight: 800 !important;
-      letter-spacing: 0.12em !important;
+      letter-spacing: 0.14em !important;
       text-transform: uppercase !important;
       margin-bottom: 0.75rem !important;
     }
@@ -173,10 +270,10 @@
       letter-spacing: -0.02em !important;
     }
     .cobalt-desc {
-      color: rgba(255, 255, 255, 0.85) !important;
+      color: rgba(255, 255, 255, 0.7) !important;
       font-size: 1rem !important;
       max-width: 38rem !important;
-      margin: 0 auto 2.25rem auto !important;
+      margin: 0 auto 2.5rem auto !important;
       line-height: 1.6 !important;
     }
     .cobalt-grid {
@@ -197,19 +294,21 @@
       justify-content: center !important;
       gap: 0.6rem !important;
       height: 3.5rem !important;
-      background-color: #fffdf9 !important;
-      color: #000000 !important;
-      border: 2px solid #000000 !important;
+      background-color: #141926 !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
       box-shadow: 4px 4px 0px #000000 !important;
       font-size: 0.95rem !important;
       font-weight: 700 !important;
       text-decoration: none !important;
       border-radius: 0px !important;
-      transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background-color 0.15s ease !important;
     }
     .cobalt-social-card:hover {
       transform: translate(-2px, -2px) !important;
       box-shadow: 6px 6px 0px #000000 !important;
+      border-color: rgba(255, 255, 255, 0.3) !important;
+      background-color: #1a2133 !important;
     }
     .cobalt-cta-btn {
       display: inline-flex !important;
@@ -218,28 +317,34 @@
       gap: 0.6rem !important;
       height: 3.5rem !important;
       padding: 0 2.25rem !important;
-      background-color: #111111 !important;
+      background: linear-gradient(135deg, #ff4757 0%, #ee2737 100%) !important;
       color: #ffffff !important;
       font-weight: 700 !important;
       font-size: 1rem !important;
-      border: 2px solid #111111 !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
       border-radius: 9999px !important;
-      box-shadow: 4px 4px 0px #ff6347 !important;
+      box-shadow: 0 8px 25px rgba(255, 71, 87, 0.45) !important;
       transition: transform 0.15s ease, box-shadow 0.15s ease !important;
       text-decoration: none !important;
       cursor: pointer !important;
       margin-top: 2.25rem !important;
     }
     .cobalt-cta-btn:hover {
-      transform: translate(-2px, -2px) !important;
-      box-shadow: 6px 6px 0px #ff6347 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 12px 30px rgba(255, 71, 87, 0.6) !important;
+    }
+
+    footer {
+      background-color: #050608 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+      color: rgba(255, 255, 255, 0.45) !important;
     }
 
     .contact-modal {
       display: none;
     }
     .contact-modal:target {
-      display: grid;
+      display: grid !important;
     }
   </style>
 </head>
@@ -248,10 +353,10 @@
 
     <!-- 1. Navigation Header -->
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 md:px-8">
-      <a href="#top" class="font-display text-2xl font-black tracking-normal">
+      <a href="#top" class="font-display text-2xl font-black tracking-normal text-white">
         PANG<span class="text-coral">!</span>
       </a>
-      <a href="#contact" class="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-surface px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-primary">
+      <a href="#contact" class="nav-contact-btn inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition hover:-translate-y-0.5">
         <span>ติดต่อ</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
@@ -260,26 +365,26 @@
     <!-- 2. Hero Section (Pastel Tone + Organic Blob + Thinking/Story sticker) -->
     <section class="mx-auto grid max-w-6xl items-center gap-8 px-5 pb-20 pt-8 md:grid-cols-[1.15fr_.85fr] md:px-8 md:pb-28 md:pt-14">
       <div class="relative z-10">
-        <p class="mb-5 flex items-center gap-2 text-xs font-bold uppercase text-primary">
+        <p class="mb-5 flex items-center gap-2 text-xs font-bold uppercase hero-sparkle">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
           <span>Creator · Storyteller · Mentor</span>
         </p>
 
-        <h1 class="font-display text-6xl font-black leading-[.92] tracking-normal sm:text-7xl md:text-8xl">
+        <h1 class="font-display text-6xl font-black leading-[.92] tracking-normal sm:text-7xl md:text-8xl text-white">
           PANG<span class="text-coral">!</span>
         </h1>
 
-        <p class="mt-6 max-w-xl text-xl font-medium leading-relaxed md:text-2xl">
+        <p class="mt-6 max-w-xl text-xl font-medium leading-relaxed md:text-2xl text-slate-200">
           เป็นตัวเองให้ชัด แล้วเล่าออกมาให้โลกจำ<br />
-          <span class="text-muted-foreground">พื้นที่สำหรับคนที่อยากทำคอนเทนต์อย่างมีตัวตน</span>
+          <span class="text-slate-400">พื้นที่สำหรับคนที่อยากทำคอนเทนต์อย่างมีตัวตน</span>
         </p>
 
         <div class="mt-9 flex flex-wrap items-center gap-4">
-          <a href="#work" class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground transition hover:-translate-y-1">
+          <a href="#work" class="hero-cta inline-flex items-center gap-3 rounded-full px-6 py-3.5 font-bold transition">
             <span>ดูผลงานและบริการ</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
           </a>
-          <span class="text-sm font-medium text-muted-foreground">
+          <span class="text-sm font-medium text-slate-400">
             เปิดสอนทั้งเด็กและผู้ใหญ่ · กระดาษและดิจิทัล
           </span>
         </div>
@@ -287,37 +392,37 @@
 
       <!-- Organic Blob Portrait Frame with Rotate Badge -->
       <div class="relative mx-auto w-full max-w-sm">
-        <div class="portrait-frame overflow-hidden rounded-[42%_58%_48%_52%/50%_40%_60%_50%] bg-lavender p-3 shadow-soft">
+        <div class="portrait-frame hero-portrait-frame overflow-hidden rounded-[42%_58%_48%_52%/50%_40%_60%_50%] p-3 shadow-soft">
           <img
             src="./images/creator-portrait.jpg"
             alt="PANG ครีเอเตอร์และนักเล่าเรื่อง"
             class="aspect-[4/5] w-full rounded-[inherit] object-cover object-top"
           />
         </div>
-        <span class="absolute -bottom-3 -left-2 rotate-[-7deg] rounded-full bg-sun px-5 py-3 text-sm font-black shadow-soft text-foreground">
+        <span class="hero-badge-tag absolute -bottom-3 -left-2 rotate-[-7deg] rounded-full px-5 py-3 text-sm font-black shadow-soft">
           คิด · เล่า · เล่น
         </span>
       </div>
     </section>
 
     <!-- 3. Work Section: 5 Selected Stories / Video Player & Interactive Switcher (bg-section) -->
-    <section id="work" class="bg-section py-20 md:py-28">
+    <section id="work" class="dark-video-section py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-5 md:px-8">
         <div class="mb-8 flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p class="text-xs font-bold uppercase text-primary">Selected stories · 01—05</p>
-            <h2 class="mt-2 font-display text-4xl font-black tracking-normal md:text-6xl">
+            <p class="text-xs font-bold uppercase hero-sparkle">Selected stories · 01—05</p>
+            <h2 class="mt-2 font-display text-4xl font-black tracking-normal md:text-6xl text-white">
               เลือกคลิปที่อยากดู
             </h2>
           </div>
-          <p class="max-w-xs text-sm leading-relaxed text-muted-foreground">
+          <p class="max-w-xs text-sm leading-relaxed text-slate-400">
             รวมเรื่องเล่า ไอเดีย และเบื้องหลัง กดเลือกคลิปได้ตามใจเลย
           </p>
         </div>
 
         <div class="grid gap-5 lg:grid-cols-[1fr_19rem]">
           <!-- Main Player Box -->
-          <div class="group relative overflow-hidden rounded-[2rem] bg-foreground shadow-soft">
+          <div class="video-main-card group relative overflow-hidden rounded-[2rem] shadow-soft">
             <img
               id="main-video-img"
               src="./images/video-cover.jpg"
@@ -325,7 +430,7 @@
               class="aspect-video h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
             />
             <div class="absolute inset-0 bg-video-shade"></div>
-            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 p-5 text-primary-foreground md:p-8">
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 p-5 text-white md:p-8">
               <div>
                 <span id="main-video-id" class="text-xs font-bold opacity-75">PLAYING · 01</span>
                 <h3 id="main-video-title" class="mt-1 max-w-lg text-2xl font-bold md:text-3xl leading-snug">
@@ -338,7 +443,7 @@
                 href="https://www.youtube.com/"
                 target="_blank"
                 rel="noreferrer"
-                class="grid size-14 shrink-0 place-items-center rounded-full bg-sun text-foreground transition hover:scale-110 shadow-md cursor-pointer"
+                class="video-play-btn grid size-14 shrink-0 place-items-center rounded-full transition hover:scale-110 shadow-md cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
               </a>
@@ -470,29 +575,29 @@
 
     <!-- 7. Contact Modal Panel (Pure CSS :target) -->
     <section id="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title" class="contact-modal fixed inset-0 z-50 place-items-center px-4 py-8">
-      <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute inset-0 bg-foreground/80 backdrop-blur-xs"></a>
-      <div class="relative z-10 w-full max-w-md border-2 border-foreground bg-background shadow-[8px_8px_0_var(--cobalt)]">
+      <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute inset-0 bg-black/85 backdrop-blur-sm"></a>
+      <div class="relative z-10 w-full max-w-md border border-white/20 bg-[#121520] shadow-[0_25px_60px_rgba(0,0,0,0.85)] rounded-2xl overflow-hidden">
         <!-- Modal Header -->
-        <div class="border-b-2 border-foreground bg-coral p-6 pr-14 text-left">
-          <h2 id="contact-title" class="font-display text-3xl font-extrabold text-foreground tracking-tight">ช่องทางการติดต่อ</h2>
-          <p class="mt-1 text-sm text-foreground/80">ทักมาคุย แชร์ไอเดีย หรือร่วมงานกันได้เลย</p>
-          <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute right-4 top-4 grid size-8 place-items-center rounded-full border-2 border-foreground bg-background text-foreground transition-colors hover:bg-lemon">
+        <div class="border-b border-white/10 bg-gradient-to-r from-[#ff4757] to-[#e83848] p-6 pr-14 text-left">
+          <h2 id="contact-title" class="font-display text-3xl font-extrabold text-white tracking-tight">ช่องทางการติดต่อ</h2>
+          <p class="mt-1 text-sm text-white/90">ทักมาคุย แชร์ไอเดีย หรือร่วมงานกันได้เลย</p>
+          <a href="#contact" aria-label="ปิดหน้าติดต่อ" class="absolute right-4 top-4 grid size-8 place-items-center rounded-full border border-white/30 bg-black/30 text-white transition-colors hover:bg-white hover:text-black">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </a>
         </div>
 
         <!-- Modal Links -->
-        <div class="grid grid-cols-2 gap-3 p-6 bg-surface">
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border-2 border-foreground bg-background p-2 text-sm font-bold text-foreground shadow-[2px_2px_0_var(--foreground)] hover:-translate-y-0.5 transition-transform">
+        <div class="grid grid-cols-2 gap-3 p-6 bg-[#121520]">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
             Instagram
           </a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border-2 border-foreground bg-background p-2 text-sm font-bold text-foreground shadow-[2px_2px_0_var(--foreground)] hover:-translate-y-0.5 transition-transform">
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
             YouTube
           </a>
-          <a href="https://line.me/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border-2 border-foreground bg-background p-2 text-sm font-bold text-foreground shadow-[2px_2px_0_var(--foreground)] hover:-translate-y-0.5 transition-transform">
+          <a href="https://line.me/" target="_blank" rel="noreferrer" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
             LINE Official
           </a>
-          <a href="mailto:hello@example.com" class="flex min-h-12 items-center justify-center gap-2 border-2 border-foreground bg-background p-2 text-sm font-bold text-foreground shadow-[2px_2px_0_var(--foreground)] hover:-translate-y-0.5 transition-transform">
+          <a href="mailto:hello@example.com" class="flex min-h-12 items-center justify-center gap-2 border border-white/15 bg-[#1a1f2e] p-2 text-sm font-bold text-white hover:border-[#ff4757] hover:-translate-y-0.5 transition-all rounded-xl">
             Email Us
           </a>
         </div>
@@ -504,11 +609,11 @@
   <!-- Interactive 5-Clip Switcher Script -->
   <script>
     const clips = [
-      { id: '01', title: 'เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง', duration: '06:42', tone: 'bg-primary text-primary-foreground', thumb: './images/video-cover.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '02', title: 'หาเสียงของตัวเองให้เจอ', duration: '04:18', tone: 'bg-coral text-foreground', thumb: './images/banner_aivcs.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '03', title: 'เบื้องหลังคอนเทนต์หนึ่งชิ้น', duration: '08:05', tone: 'bg-sun text-foreground', thumb: './images/grid_1.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '04', title: 'เปลี่ยนไอเดียธรรมดาให้จำได้', duration: '05:26', tone: 'bg-mint text-foreground', thumb: './images/grid_2.jpg', videoUrl: 'https://www.youtube.com/' },
-      { id: '05', title: 'คุยเรื่องการเป็นครีเอเตอร์', duration: '09:10', tone: 'bg-pink text-foreground', thumb: './images/creator-portrait.jpg', videoUrl: 'https://www.youtube.com/' }
+      { id: '01', title: 'เริ่มเล่าเรื่องยังไง ให้คนอยากฟัง', duration: '06:42', tone: 'bg-[#ff4757] text-white', thumb: './images/video-cover.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '02', title: 'หาเสียงของตัวเองให้เจอ', duration: '04:18', tone: 'bg-[#ff6d5d] text-black', thumb: './images/banner_aivcs.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '03', title: 'เบื้องหลังคอนเทนต์หนึ่งชิ้น', duration: '08:05', tone: 'bg-[#fdd748] text-black', thumb: './images/grid_1.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '04', title: 'เปลี่ยนไอเดียธรรมดาให้จำได้', duration: '05:26', tone: 'bg-[#00d2d3] text-black', thumb: './images/grid_2.jpg', videoUrl: 'https://www.youtube.com/' },
+      { id: '05', title: 'คุยเรื่องการเป็นครีเอเตอร์', duration: '09:10', tone: 'bg-[#5f27cd] text-white', thumb: './images/creator-portrait.jpg', videoUrl: 'https://www.youtube.com/' }
     ];
 
     let currentClipIndex = 0;
@@ -520,8 +625,8 @@
       container.innerHTML = clips.map((clip, idx) => {
         const isActive = idx === currentClipIndex;
         const activeClass = isActive
-          ? 'border-primary bg-surface shadow-soft'
-          : 'border-transparent bg-surface/60 hover:bg-surface';
+          ? 'playlist-item active'
+          : 'playlist-item';
 
         return `
           <button
@@ -534,10 +639,10 @@
               ${clip.id}
             </span>
             <span class="min-w-0">
-              <span class="line-clamp-1 block text-sm font-bold text-foreground">${clip.title}</span>
-              <span class="mt-1 block text-xs text-muted-foreground">${clip.duration}</span>
+              <span class="line-clamp-1 block text-sm font-bold text-white">${clip.title}</span>
+              <span class="mt-1 block text-xs text-slate-400">${clip.duration}</span>
             </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-primary"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-[#ff4757]"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
           </button>
         `;
       }).join('');
